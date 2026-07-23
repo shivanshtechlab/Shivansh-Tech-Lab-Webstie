@@ -1,0 +1,254 @@
+/* ═══════════════════════════════════════════
+   OFFICE LOCATION
+═══════════════════════════════════════════ */
+.office-section {
+  padding: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface-2);
+}
+
+.office-section__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.office-section__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.06;
+}
+
+.office-section__glow--1 {
+  width: 600px;
+  height: 600px;
+  background: var(--color-primary);
+  top: -150px;
+  left: 20%;
+}
+
+.office-section__glow--2 {
+  width: 400px;
+  height: 400px;
+  background: var(--color-secondary);
+  bottom: -100px;
+  right: 10%;
+}
+
+/* ── Map ── */
+.office-map {
+  position: relative;
+  margin-top: 2.5rem;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--color-surface-3);
+}
+
+.office-map__svg {
+  width: 100%;
+  display: block;
+}
+
+.office-map__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 40% at 50% 50%,
+    color-mix(in srgb, var(--active-color, #6C63FF) 8%, transparent),
+    transparent 70%
+  );
+  pointer-events: none;
+  transition: background 0.5s ease;
+}
+
+/* Map pin animations */
+.office-map__pin-group {
+  transition: all 0.2s ease;
+}
+
+.office-map__dot {
+  transition: r 0.3s ease, opacity 0.3s ease;
+}
+
+.office-map__ring {
+  animation: map-ring-pulse 2.5s ease-out infinite;
+  transform-origin: center;
+}
+
+.office-map__ring--2 {
+  animation-delay: 0.4s;
+}
+
+@keyframes map-ring-pulse {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  70% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* ── Office Cards ── */
+.office-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.office-card {
+  position: relative;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+  width: 100%;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  backdrop-filter: blur(16px);
+}
+
+.office-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+
+.office-card--active {
+  border-color: color-mix(in srgb, var(--office-color) 50%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--office-color) 25%, transparent),
+              0 16px 50px rgba(0,0,0,0.25);
+}
+
+.office-card__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--office-color) 10%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.office-card--active .office-card__glow {
+  opacity: 1;
+}
+
+/* ── Card Header ── */
+.office-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.office-card__flag {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.office-card__titles {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.office-card__city {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.office-card__country {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.office-card__label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid;
+  flex-shrink: 0;
+}
+
+/* ── Details (expanded) ── */
+.office-card__details {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1.125rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.office-card__detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+.office-card__detail-icon {
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+.office-card__detail-link {
+  color: var(--office-color);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.office-card__detail-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* ── Active Indicator (bottom line) ── */
+.office-card__indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.office-card--active .office-card__indicator {
+  opacity: 0.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .office-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .office-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .office-map {
+    margin-top: 3rem;
+  }
+}

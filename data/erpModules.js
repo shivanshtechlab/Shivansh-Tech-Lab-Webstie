@@ -1,0 +1,58 @@
+export const erpModules = [
+  {
+    id: 1,
+    icon: '📦',
+    title: 'Inventory Management',
+    description: 'Real-time stock tracking, multi-warehouse support, and automated reorder points.',
+    color: '#6C63FF',
+  },
+  {
+    id: 2,
+    icon: '💰',
+    title: 'Finance & Accounting',
+    description: 'General ledger, accounts payable/receivable, financial reporting, and tax management.',
+    color: '#00D9FF',
+  },
+  {
+    id: 3,
+    icon: '👥',
+    title: 'HR Management',
+    description: 'Employee records, payroll, attendance, leave management, and performance reviews.',
+    color: '#7C3AED',
+  },
+  {
+    id: 4,
+    icon: '🛒',
+    title: 'Purchase Management',
+    description: 'Purchase orders, vendor management, approval workflows, and spend analytics.',
+    color: '#00E676',
+  },
+  {
+    id: 5,
+    icon: '📊',
+    title: 'Sales Management',
+    description: 'Quotations, orders, invoicing, customer management, and sales analytics.',
+    color: '#6C63FF',
+  },
+  {
+    id: 6,
+    icon: '🏭',
+    title: 'Manufacturing',
+    description: 'Production planning, BOM management, work orders, and quality control.',
+    color: '#00D9FF',
+  },
+  {
+    id: 7,
+    icon: '🚚',
+    title: 'Supply Chain',
+    description: 'Vendor management, logistics tracking, and end-to-end supply chain visibility.',
+    color: '#7C3AED',
+  },
+  {
+    id: 8,
+    icon: '📈',
+    title: 'Business Intelligence',
+    description: 'Real-time dashboards, custom reports, KPI tracking, and predictive analytics.',
+    color: '#00E676',
+  },
+];

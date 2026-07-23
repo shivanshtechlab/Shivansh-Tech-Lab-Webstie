@@ -1,0 +1,330 @@
+/* ═══════════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════════ */
+.testi-section {
+  padding: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+}
+
+.testi-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.testi-bg__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.07;
+}
+
+.testi-bg__glow--1 {
+  width: 500px;
+  height: 500px;
+  background: var(--color-primary);
+  top: 0;
+  left: 20%;
+}
+
+.testi-bg__glow--2 {
+  width: 400px;
+  height: 400px;
+  background: var(--color-secondary);
+  bottom: 0;
+  right: 20%;
+}
+
+.testi-bg__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent);
+}
+
+/* ── Carousel ── */
+.testi-carousel {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  cursor: grab;
+  user-select: none;
+}
+
+.testi-carousel:active {
+  cursor: grabbing;
+}
+
+/* ── Side peeks ── */
+.testi-side {
+  flex: 0 0 160px;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.testi-side:hover {
+  opacity: 0.5;
+}
+
+.testi-peek {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.testi-peek p {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Main Card Wrap ── */
+.testi-card-wrap {
+  flex: 1;
+  min-height: 320px;
+  position: relative;
+}
+
+/* ── Card ── */
+.testi-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(24px);
+  border-radius: var(--radius-2xl);
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+}
+
+.testi-card__glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  top: -100px;
+  right: -80px;
+  filter: blur(80px);
+  opacity: 0.1;
+  pointer-events: none;
+  transition: background 0.4s ease;
+}
+
+.testi-card__quote-mark {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  line-height: 0.5;
+  color: var(--accent-color, var(--color-primary));
+  opacity: 0.15;
+  position: absolute;
+  top: 2rem;
+  left: 2.5rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.testi-card__text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+  padding-top: 1rem;
+}
+
+.testi-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.testi-card__avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px currentColor;
+}
+
+.testi-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.testi-card__name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.testi-card__role {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+.testi-card__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.testi-card__project {
+  font-size: 0.72rem;
+  background: rgba(108, 99, 255, 0.1);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  color: var(--color-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.testi-card__accent-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
+  opacity: 0.6;
+}
+
+/* ── Stars ── */
+.testi-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.testi-star {
+  width: 16px;
+  height: 16px;
+  fill: rgba(255, 255, 255, 0.15);
+}
+
+.testi-star--filled {
+  fill: #FFB800;
+}
+
+/* ── Navigation ── */
+.testi-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.testi-nav__arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.testi-nav__arrow:hover {
+  border-color: var(--color-primary);
+  background: rgba(108, 99, 255, 0.1);
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.testi-nav__arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Dots ── */
+.testi-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.testi-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.testi-dot--active {
+  width: 24px;
+}
+
+/* ── Progress ── */
+.testi-progress {
+  margin-top: 1.5rem;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testi-progress__bar {
+  height: 100%;
+  transform-origin: left;
+  border-radius: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .testi-side {
+    display: none;
+  }
+
+  .testi-card {
+    padding: 2rem;
+  }
+
+  .testi-card__text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testi-card {
+    padding: 1.5rem;
+  }
+  .testi-card__text {
+    font-size: 0.95rem;
+  }
+  .testi-nav {
+    gap: 0.75rem;
+  }
+}

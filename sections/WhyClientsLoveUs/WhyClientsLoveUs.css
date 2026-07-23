@@ -1,0 +1,315 @@
+/* ═══════════════════════════════════════════
+   WHY CLIENTS LOVE US
+═══════════════════════════════════════════ */
+.wclu-section {
+  padding: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface-2);
+}
+
+/* ── Aurora Background ── */
+.wclu-aurora {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.wclu-aurora__layer {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: aurora-move 8s ease-in-out infinite alternate;
+}
+
+.wclu-aurora__layer--1 {
+  width: 70%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(108, 99, 255, 0.12) 0%, transparent 70%);
+  top: -20%;
+  left: -10%;
+  animation-duration: 10s;
+}
+
+.wclu-aurora__layer--2 {
+  width: 60%;
+  height: 50%;
+  background: radial-gradient(ellipse, rgba(0, 217, 255, 0.08) 0%, transparent 70%);
+  top: 20%;
+  right: -15%;
+  animation-duration: 7s;
+  animation-delay: -3s;
+}
+
+.wclu-aurora__layer--3 {
+  width: 50%;
+  height: 40%;
+  background: radial-gradient(ellipse, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+  bottom: -10%;
+  left: 30%;
+  animation-duration: 12s;
+  animation-delay: -6s;
+}
+
+@keyframes aurora-move {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, 20px) scale(1.1); }
+}
+
+/* ── Star Particles ── */
+.wclu-stars-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.wclu-star-particle {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: star-twinkle 3s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.5; transform: scale(1); }
+}
+
+/* ── Stats Grid ── */
+.wclu-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.wclu-stat {
+  position: relative;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.wclu-stat:hover {
+  transform: translateY(-6px);
+}
+
+.wclu-stat__glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(60px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.wclu-stat__value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.wclu-stat__label {
+  display: block;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* ── Stars ── */
+.wclu-stars {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+}
+
+.wclu-star {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Review Banner ── */
+.wclu-review-banner {
+  margin-top: 2.5rem;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.wclu-review-banner__inner {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: banner-scroll 20s linear infinite;
+}
+
+@keyframes banner-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.wclu-review-banner__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 0.6rem 1.25rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+/* ── Quote Cards ── */
+.wclu-quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.wclu-quote-card {
+  position: relative;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wclu-quote-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.wclu-quote-card__glow {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  bottom: -60px;
+  right: -40px;
+  filter: blur(50px);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.wclu-quote-card__top {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.wclu-quote-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.wclu-quote-card__meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.wclu-quote-card__name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.wclu-quote-card__role {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+
+.wclu-quote-card__project {
+  font-size: 0.68rem;
+  padding: 0.25rem 0.625rem;
+  background: rgba(108, 99, 255, 0.1);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  border-radius: 100px;
+  color: var(--color-primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.wclu-quote-card__text {
+  margin: 1rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  font-style: italic;
+  quotes: none;
+}
+
+.wclu-quote-card__border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-left: 3px solid;
+  border-radius: 3px 0 0 3px;
+  opacity: 0.6;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .wclu-quotes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wclu-stats {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .wclu-quotes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .wclu-stats { gap: 1rem; margin-top: 1.75rem; }
+  .wclu-stat { padding: 2rem 1.5rem; }
+  .wclu-quotes { gap: 1rem; margin-top: 1.75rem; }
+  .wclu-quote-card { padding: 1.5rem; }
+}

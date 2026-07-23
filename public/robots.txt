@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://Shivansh Tech Lab.com/sitemap.xml
