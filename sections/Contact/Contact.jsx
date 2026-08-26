@@ -36,10 +36,10 @@ const socialLinks = [
 ];
 
 const infoItems = [
-  { icon: '✉', label: 'Email', value: 'hello@Shivansh Tech Lab.com', href: 'mailto:hello@Shivansh Tech Lab.com' },
-  { icon: '📞', label: 'Phone', value: '+1 (555) 987-6543', href: 'tel:+15559876543' },
-  { icon: '📍', label: 'Address', value: '350 5th Avenue, New York, NY 10118', href: '#' },
-  { icon: '🕐', label: 'Availability', value: 'Mon–Fri: 9AM – 6PM EST', href: null },
+  { icon: '✉', label: 'Email', value: 'hello@shivanshtechlab.com', href: 'mailto:hello@shivanshtechlab.com' },
+  { icon: '📞', label: 'Phone', value: '+91 79917 18363', href: 'tel:+917991718363' },
+  { icon: '📍', label: 'Address', value: 'Dum Dum, Kolkata 700030, India', href: '#' },
+  { icon: '🕐', label: 'Availability', value: 'Mon–Fri: 9AM – 6PM IST', href: null },
 ];
 
 function FloatLabel({ id, label, children }) {

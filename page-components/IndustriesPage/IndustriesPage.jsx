@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero/PageHero';
@@ -65,10 +64,6 @@ function IndustryCard({ industry, index }) {
 }
 
 export default function IndustriesPage() {
-  useEffect(() => {
-    document.title = 'Industries – Shivansh Tech Lab';
-  }, []);
-
   return (
     <main className="ip">
       <PageHero

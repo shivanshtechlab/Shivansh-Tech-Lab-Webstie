@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 import { STATS } from '../../constants/index';
 import heroImg from '../../assets/hero.png';
 import './Hero.css';
@@ -231,11 +232,12 @@ export default function Hero() {
           aria-hidden="true"
         >
           <div className="hero__img-glow" />
-          <img
-            src={heroImg.src}
+          <Image
+            src={heroImg}
             alt=""
             className="hero__img"
-            loading="eager"
+            sizes="(max-width: 480px) 300px, (max-width: 640px) 340px, (max-width: 900px) 420px, 650px"
+            priority
             draggable="false"
           />
         </motion.div>

@@ -164,7 +164,6 @@ export default function OurWorkPage() {
   const [activeNav, setActiveNav] = useState('');
 
   useEffect(() => {
-    document.title = 'Our Work – Shivansh Tech Lab';
     fetch('/api/projects?status=active')
       .then(r => r.json())
       .then(d => { if (d.success) setProjects(d.data) })

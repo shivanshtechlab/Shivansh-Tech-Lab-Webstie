@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero/PageHero';
@@ -79,10 +78,6 @@ function TeamCard({ member, index }) {
 }
 
 export default function AboutPage() {
-  useEffect(() => {
-    document.title = 'About – Shivansh Tech Lab';
-  }, []);
-
   return (
     <main className="ap">
       <PageHero

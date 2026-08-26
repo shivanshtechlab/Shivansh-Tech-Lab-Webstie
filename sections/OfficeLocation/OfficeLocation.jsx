@@ -9,56 +9,17 @@ import './OfficeLocation.css';
 const offices = [
   {
     id: 1,
-    city: 'New York',
-    country: 'United States',
-    flag: '🇺🇸',
+    city: 'Kolkata',
+    country: 'India',
+    flag: '🇮🇳',
     label: 'HQ',
-    address: '350 5th Avenue, Suite 4200, New York, NY 10118',
-    phone: '+1 (555) 987-6543',
-    email: 'usa@Shivansh Tech Lab.com',
+    address: '34/1 Ravi Sudha Apartment, Near Post Office, Dum Dum, Kolkata 700030, West Bengal',
+    phone: '+91 79917 18363',
+    email: 'hello@shivanshtechlab.com',
     color: '#6C63FF',
-    // Approximate position on the world map SVG viewBox 0 0 1000 500
-    mapX: 20,
-    mapY: 38,
-  },
-  {
-    id: 2,
-    city: 'London',
-    country: 'United Kingdom',
-    flag: '🇬🇧',
-    label: 'EU',
-    address: '1 Canada Square, Canary Wharf, London E14 5AB',
-    phone: '+44 20 7946 0000',
-    email: 'uk@Shivansh Tech Lab.com',
-    color: '#00D9FF',
-    mapX: 47,
-    mapY: 28,
-  },
-  {
-    id: 3,
-    city: 'Dubai',
-    country: 'United Arab Emirates',
-    flag: '🇦🇪',
-    label: 'MENA',
-    address: 'Dubai Internet City, Building 3, Level 5, Dubai',
-    phone: '+971 4 123 4567',
-    email: 'uae@Shivansh Tech Lab.com',
-    color: '#7C3AED',
-    mapX: 58,
-    mapY: 42,
-  },
-  {
-    id: 4,
-    city: 'Singapore',
-    country: 'Singapore',
-    flag: '🇸🇬',
-    label: 'APAC',
-    address: '1 Raffles Place, #20-61, Singapore 048616',
-    phone: '+65 6789 0123',
-    email: 'sg@Shivansh Tech Lab.com',
-    color: '#00E676',
-    mapX: 77,
-    mapY: 55,
+    // Approximate position on the world map SVG viewBox 0 0 900 400
+    mapX: 66,
+    mapY: 34,
   },
 ];
 
@@ -101,8 +62,8 @@ export default function OfficeLocation() {
         <ScrollReveal>
           <SectionTitle
             badge="LOCATION"
-            title="Find Us Around the Globe"
-            subtitle="With offices across four continents, we're always close to our clients and ready to collaborate in your timezone."
+            title="Find Us in Kolkata"
+            subtitle="Headquartered in Kolkata, India, and working with clients around the world — wherever you are, we're ready to collaborate in your timezone."
           />
         </ScrollReveal>
 

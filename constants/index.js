@@ -1,8 +1,8 @@
 ﻿export const COMPANY_NAME = 'Shivansh Tech Lab';
 export const COMPANY_TAGLINE = 'We Build Digital Experiences That Define Tomorrow';
-export const COMPANY_EMAIL = 'hello@Shivansh Tech Lab.com';
-export const COMPANY_PHONE = '+1 (800) RED-BUGFIX';
-export const COMPANY_ADDRESS = '100 Innovation Drive, Tech Valley, CA 94105, USA';
+export const COMPANY_EMAIL = 'hello@shivanshtechlab.com';
+export const COMPANY_PHONE = '+91 79917 18363';
+export const COMPANY_ADDRESS = '34/1 Ravi Sudha Apartment, Near Post Office, Dum Dum, Kolkata 700030, West Bengal, India';
 
 export const STATS = [
   { value: '100+', label: 'Projects' },
@@ -36,11 +36,8 @@ export const NAV_LINKS = [
 ];
 
 export const SOCIAL_LINKS = [
-  { label: 'LinkedIn', href: 'https://linkedin.com', icon: 'linkedin' },
-  { label: 'Twitter', href: 'https://twitter.com', icon: 'twitter' },
-  { label: 'GitHub', href: 'https://github.com', icon: 'github' },
-  { label: 'Dribbble', href: 'https://dribbble.com', icon: 'dribbble' },
-  { label: 'Instagram', href: 'https://instagram.com', icon: 'instagram' },
+  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61592396873683', icon: 'facebook' },
+  { label: 'Instagram', href: 'https://www.instagram.com/shivansh_tech_lab/?hl=en', icon: 'instagram' },
 ];
 
 export const COLORS = {

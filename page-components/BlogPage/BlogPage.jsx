@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero/PageHero';
@@ -107,10 +107,6 @@ export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [email, setEmail] = useState('');
   const [subStatus, setSubStatus] = useState('idle');
-
-  useEffect(() => {
-    document.title = 'Blog – Shivansh Tech Lab';
-  }, []);
 
   const handleSubscribe = useCallback((e) => {
     e.preventDefault();

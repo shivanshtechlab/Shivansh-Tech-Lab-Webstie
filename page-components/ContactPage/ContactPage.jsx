@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import PageHero from '../../components/PageHero/PageHero';
 import Footer from '../../components/Footer/Footer';
@@ -11,24 +11,24 @@ const contactInfo = [
   {
     icon: '✉️',
     title: 'Email Us',
-    primary: 'hello@ShivanshTechLab.com',
+    primary: 'hello@shivanshtechlab.com',
     secondary: 'We reply within 2 hours',
     color: '#6C63FF',
-    href: 'mailto:hello@ShivanshTechLab.com',
+    href: 'mailto:hello@shivanshtechlab.com',
   },
   {
     icon: '📞',
     title: 'Call Us',
-    primary: '+1 (800) RED-BUGFIX',
-    secondary: 'Mon–Fri, 9am–6pm EST',
+    primary: '+91 79917 18363',
+    secondary: 'Mon–Fri, 9am–6pm IST',
     color: '#00D9FF',
-    href: 'tel:+18007332849',
+    href: 'tel:+917991718363',
   },
   {
     icon: '📍',
     title: 'Visit Us',
-    primary: '100 Innovation Drive',
-    secondary: 'Tech Valley, CA 94105',
+    primary: '34/1 Ravi Sudha Apartment',
+    secondary: 'Dum Dum, Kolkata 700030',
     color: '#7C3AED',
     href: '#',
   },
@@ -43,10 +43,7 @@ const contactInfo = [
 ];
 
 const offices = [
-  { city: 'New York',   label: 'HQ',   flag: '🇺🇸', address: '100 Innovation Drive, Tech Valley, CA 94105', color: '#6C63FF' },
-  { city: 'London',     label: 'EU',   flag: '🇬🇧', address: '25 Canary Wharf, London E14 5AB',             color: '#00D9FF' },
-  { city: 'Dubai',      label: 'MENA', flag: '🇦🇪', address: 'DIFC, Gate Village, Dubai 506627',            color: '#7C3AED' },
-  { city: 'Singapore',  label: 'APAC', flag: '🇸🇬', address: '1 Raffles Place, Tower 1, #20-01',            color: '#00E676' },
+  { city: 'Kolkata', label: 'HQ', flag: '🇮🇳', address: '34/1 Ravi Sudha Apartment, Near Post Office, Dum Dum, Kolkata 700030', color: '#6C63FF' },
 ];
 
 const serviceOptions = [
@@ -78,10 +75,6 @@ export default function ContactPage() {
   });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle');
-
-  useEffect(() => {
-    document.title = 'Contact – Shivansh Tech Lab';
-  }, []);
 
   const validate = useCallback(() => {
     const e = {};
@@ -323,8 +316,8 @@ export default function ContactPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="cp__offices-title">Our <span className="gradient-text">Global Offices</span></h2>
-            <p className="cp__offices-sub">Wherever you are, we're close by</p>
+            <h2 className="cp__offices-title">Our <span className="gradient-text">Office</span></h2>
+            <p className="cp__offices-sub">Based in Kolkata, working with clients worldwide</p>
           </motion.div>
           <div className="cp__offices-grid">
             {offices.map((office, i) => (

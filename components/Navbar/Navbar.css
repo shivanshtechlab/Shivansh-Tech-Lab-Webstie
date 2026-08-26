@@ -589,15 +589,33 @@
   .nav-hamburger {
     display: flex;
   }
+
+  .nav-logo-img {
+    height: 60px;
+  }
 }
 
 @media (max-width: 640px) {
   .nav-container {
-    padding: 1rem 1.25rem;
+    padding: 0.75rem 1.25rem;
   }
 
   .nav-cta {
     display: none;
+  }
+
+  .nav-logo-img {
+    height: 44px;
+  }
+
+  .nav-actions {
+    gap: 0.625rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-logo-img {
+    height: 38px;
   }
 }
 

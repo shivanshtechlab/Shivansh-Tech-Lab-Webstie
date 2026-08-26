@@ -210,7 +210,6 @@ export default function ServicesPage() {
   const [loading,        setLoading]        = useState(true);
 
   useEffect(() => {
-    document.title = 'Services – Shivansh Tech Lab';
     fetchData();
   }, []);
 

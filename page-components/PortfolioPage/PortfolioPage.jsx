@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero/PageHero';
@@ -112,10 +112,6 @@ function TestimonialCard({ t }) {
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('All');
-
-  useEffect(() => {
-    document.title = 'Portfolio – Shivansh Tech Lab';
-  }, []);
 
   const filtered = activeCategory === 'All'
     ? portfolioItems

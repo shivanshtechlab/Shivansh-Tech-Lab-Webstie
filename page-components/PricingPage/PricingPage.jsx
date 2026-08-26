@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import PageHero from '../../components/PageHero/PageHero';
@@ -189,10 +188,6 @@ function SectionHead({ icon, badge, title, subtitle, color }) {
 
 /* ── Main Page ──────────────────────────────────────────── */
 export default function PricingPage() {
-  useEffect(() => {
-    document.title = 'Pricing – Shivansh Tech Lab';
-  }, []);
-
   return (
     <main className="pr-page">
       <PageHero
