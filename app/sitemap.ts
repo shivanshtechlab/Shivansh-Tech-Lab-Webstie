@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { allProjects } from '../data/projects';
 
-const SITE_URL = 'https://shivanshtechlab.com';
+const SITE_URL = 'https://shivanshtechlabs.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

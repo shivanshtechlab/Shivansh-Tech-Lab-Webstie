@@ -44,15 +44,11 @@ export default function ClientShell({ children }) {
   return (
     <>
       <div className="noise-overlay" aria-hidden="true" />
-      <AnimatePresence mode="wait">
+      <Navbar />
+      {children}
+      <AnimatePresence>
         {isLoading && <Loader key="loader" />}
       </AnimatePresence>
-      {!isLoading && (
-        <>
-          <Navbar />
-          {children}
-        </>
-      )}
       <div className="toast-container" aria-live="polite">
         {toasts.map(toast => (
           <Toast key={toast.id} {...toast} onClose={() => removeToast(toast.id)} />

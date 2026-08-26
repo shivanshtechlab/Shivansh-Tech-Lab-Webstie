@@ -11,10 +11,10 @@ const contactInfo = [
   {
     icon: '✉️',
     title: 'Email Us',
-    primary: 'hello@shivanshtechlab.com',
+    primary: 'hello@shivanshtechlabs.com',
     secondary: 'We reply within 2 hours',
     color: '#6C63FF',
-    href: 'mailto:hello@shivanshtechlab.com',
+    href: 'mailto:hello@shivanshtechlabs.com',
   },
   {
     icon: '📞',

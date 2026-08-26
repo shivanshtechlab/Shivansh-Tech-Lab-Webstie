@@ -89,7 +89,7 @@ export default function AboutPage() {
         breadcrumb="About"
       />
 
-      <FounderSection />
+      <FounderSection priority />
 
       {/* Story Section */}
       <section className="ap__story">
@@ -105,7 +105,7 @@ export default function AboutPage() {
               <span className="ap__story-badge">Our Story</span>
               <h2 className="ap__story-title">Built by Builders, <span className="gradient-text">For Builders</span></h2>
               <p className="ap__story-text">
-                Shivansh Tech Lab was founded in 2015 with a simple belief: great software should be accessible to any business, regardless of size. What started as a 3-person team in a co-working space has grown into a global agency with offices across 4 continents.
+                Shivansh Tech Lab was founded by Mukesh Tieary with a simple belief: great software should be accessible to any business, regardless of size.
               </p>
               <p className="ap__story-text">
                 Our mission is to transform ambitious ideas into world-class digital products. We combine deep technical expertise with design thinking and business strategy to deliver solutions that don't just work — they win.

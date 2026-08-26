@@ -36,7 +36,7 @@ const socialLinks = [
 ];
 
 const infoItems = [
-  { icon: '✉', label: 'Email', value: 'hello@shivanshtechlab.com', href: 'mailto:hello@shivanshtechlab.com' },
+  { icon: '✉', label: 'Email', value: 'hello@shivanshtechlabs.com', href: 'mailto:hello@shivanshtechlabs.com' },
   { icon: '📞', label: 'Phone', value: '+91 79917 18363', href: 'tel:+917991718363' },
   { icon: '📍', label: 'Address', value: 'Dum Dum, Kolkata 700030, India', href: '#' },
   { icon: '🕐', label: 'Availability', value: 'Mon–Fri: 9AM – 6PM IST', href: null },

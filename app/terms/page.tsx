@@ -12,7 +12,7 @@ export default function Page() {
     <LegalPage badge="LEGAL" title="Terms of Service" breadcrumb="Terms of Service" updated="August 26, 2026">
       <h2>1. Acceptance of Terms</h2>
       <p>
-        By accessing shivanshtechlab.com or engaging Shivansh Tech Lab (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;)
+        By accessing shivanshtechlabs.com or engaging Shivansh Tech Lab (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;)
         for services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our website
         or services.
       </p>
@@ -80,7 +80,7 @@ export default function Page() {
       <h2>11. Contact Us</h2>
       <p>
         Questions about these Terms can be sent to{' '}
-        <a href="mailto:hello@shivanshtechlab.com">hello@shivanshtechlab.com</a> or to 34/1 Ravi Sudha Apartment, Near
+        <a href="mailto:hello@shivanshtechlabs.com">hello@shivanshtechlabs.com</a> or to 34/1 Ravi Sudha Apartment, Near
         Post Office, Dum Dum, Kolkata 700030, West Bengal, India.
       </p>
     </LegalPage>

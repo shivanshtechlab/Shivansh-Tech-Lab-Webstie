@@ -14,7 +14,7 @@ export default function Page() {
       <p>
         Shivansh Tech Lab (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) respects your privacy and is committed to
         protecting the personal information you share with us. This Privacy Policy explains what information we collect,
-        how we use it, and the choices you have, when you visit shivanshtechlab.com or engage us for web development,
+        how we use it, and the choices you have, when you visit shivanshtechlabs.com or engage us for web development,
         mobile app, ERP/CRM, SaaS, AI, or cloud services.
       </p>
 
@@ -76,7 +76,7 @@ export default function Page() {
       <h2>10. Contact Us</h2>
       <p>
         If you have questions about this Privacy Policy, contact us at{' '}
-        <a href="mailto:hello@shivanshtechlab.com">hello@shivanshtechlab.com</a> or write to us at 34/1 Ravi Sudha
+        <a href="mailto:hello@shivanshtechlabs.com">hello@shivanshtechlabs.com</a> or write to us at 34/1 Ravi Sudha
         Apartment, Near Post Office, Dum Dum, Kolkata 700030, West Bengal, India.
       </p>
     </LegalPage>

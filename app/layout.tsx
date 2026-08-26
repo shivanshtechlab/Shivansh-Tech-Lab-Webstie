@@ -8,7 +8,7 @@ import '../styles/theme-light.css';
 import '../styles/index.css';
 import './globals.css';
 
-const SITE_URL = 'https://shivanshtechlab.com';
+const SITE_URL = 'https://shivanshtechlabs.com';
 const SITE_NAME = 'Shivansh Tech Lab';
 const DEFAULT_TITLE = 'Shivansh Tech Lab – We Build Digital Experiences That Define Tomorrow';
 const DEFAULT_DESCRIPTION = 'Shivansh Tech Lab is a full-service digital agency offering web development, mobile apps, ERP/CRM, SaaS platforms, AI solutions, and cloud services.';
@@ -73,7 +73,7 @@ const organizationJsonLd = {
   logo: `${SITE_URL}/icon.png`,
   image: `${SITE_URL}/opengraph-image.png`,
   description: DEFAULT_DESCRIPTION,
-  email: 'hello@shivanshtechlab.com',
+  email: 'hello@shivanshtechlabs.com',
   telephone: '+91-79917-18363',
   address: {
     '@type': 'PostalAddress',
@@ -87,11 +87,14 @@ const organizationJsonLd = {
     'https://www.facebook.com/profile.php?id=61592396873683',
     'https://www.instagram.com/shivansh_tech_lab/?hl=en',
   ],
+  founder: {
+    '@id': `${SITE_URL}/about#founder`,
+  },
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+91-79917-18363',
     contactType: 'customer service',
-    email: 'hello@shivanshtechlab.com',
+    email: 'hello@shivanshtechlabs.com',
     areaServed: 'Worldwide',
     availableLanguage: ['English', 'Hindi'],
   },

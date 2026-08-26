@@ -1,6 +1,6 @@
 ﻿export const COMPANY_NAME = 'Shivansh Tech Lab';
 export const COMPANY_TAGLINE = 'We Build Digital Experiences That Define Tomorrow';
-export const COMPANY_EMAIL = 'hello@shivanshtechlab.com';
+export const COMPANY_EMAIL = 'hello@shivanshtechlabs.com';
 export const COMPANY_PHONE = '+91 79917 18363';
 export const COMPANY_ADDRESS = '34/1 Ravi Sudha Apartment, Near Post Office, Dum Dum, Kolkata 700030, West Bengal, India';
 

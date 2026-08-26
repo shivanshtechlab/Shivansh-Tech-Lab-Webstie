@@ -15,7 +15,7 @@ const offices = [
     label: 'HQ',
     address: '34/1 Ravi Sudha Apartment, Near Post Office, Dum Dum, Kolkata 700030, West Bengal',
     phone: '+91 79917 18363',
-    email: 'hello@shivanshtechlab.com',
+    email: 'hello@shivanshtechlabs.com',
     color: '#6C63FF',
     // Approximate position on the world map SVG viewBox 0 0 900 400
     mapX: 66,

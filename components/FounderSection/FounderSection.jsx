@@ -5,7 +5,7 @@ import Image from 'next/image';
 import founderImg from '../../assets/founder.jpg';
 import './FounderSection.css';
 
-export default function FounderSection() {
+export default function FounderSection({ priority = false }) {
   return (
     <section className="founder">
       <div className="container">
@@ -47,7 +47,7 @@ export default function FounderSection() {
               alt="Mukesh Tieary — Founder, Shivansh Tech Lab"
               className="founder__photo"
               sizes="(max-width: 640px) 220px, 280px"
-              priority={false}
+              priority={priority}
             />
           </div>
         </motion.div>
