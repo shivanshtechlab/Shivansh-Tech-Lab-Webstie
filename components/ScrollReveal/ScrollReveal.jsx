@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
@@ -38,7 +38,7 @@ const STAGGER_CONTAINER = {
 };
 
 /**
- * ScrollReveal â€” framer-motion scroll-triggered wrapper
+ * ScrollReveal — framer-motion scroll-triggered wrapper
  *
  * Accepts either `animation` or `variant` prop (aliases).
  * Values: 'fadeUp' | 'fadeLeft' | 'fadeRight' | 'scale' | 'stagger'

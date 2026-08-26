@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
@@ -9,7 +9,7 @@ import './Process.css';
 const steps = [
   {
     num: '01',
-    icon: 'ðŸ”',
+    icon: '🔍',
     title: 'Discovery & Strategy',
     description: 'We dive deep into your vision, market landscape, and user needs. Through structured workshops and research, we craft a bulletproof roadmap aligned with your business goals.',
     tags: ['Workshops', 'Market Research', 'Roadmap', 'KPIs'],
@@ -17,15 +17,15 @@ const steps = [
   },
   {
     num: '02',
-    icon: 'ðŸŽ¨',
+    icon: '🎨',
     title: 'UI/UX Design',
-    description: 'Creating wireframes, interactive prototypes, and pixel-perfect visual designs that users fall in love with â€” balancing beauty, usability, and brand identity.',
+    description: 'Creating wireframes, interactive prototypes, and pixel-perfect visual designs that users fall in love with — balancing beauty, usability, and brand identity.',
     tags: ['Wireframes', 'Prototyping', 'Design System', 'User Testing'],
     color: '#00D9FF',
   },
   {
     num: '03',
-    icon: 'ðŸ’»',
+    icon: '💻',
     title: 'Development',
     description: 'Building with cutting-edge technology stacks, clean architecture, and test-driven development. Every feature is crafted for performance, scalability, and longevity.',
     tags: ['Agile Sprints', 'Code Reviews', 'CI/CD', 'Unit Tests'],
@@ -33,15 +33,15 @@ const steps = [
   },
   {
     num: '04',
-    icon: 'ðŸ§ª',
+    icon: '🧪',
     title: 'Testing & QA',
-    description: 'Rigorous multi-layer quality assurance â€” automated testing, manual QA, performance benchmarking, and security audits ensure your product launches flawlessly.',
+    description: 'Rigorous multi-layer quality assurance — automated testing, manual QA, performance benchmarking, and security audits ensure your product launches flawlessly.',
     tags: ['Automation', 'Security Audit', 'Performance', 'UAT'],
     color: '#00E676',
   },
   {
     num: '05',
-    icon: 'ðŸš€',
+    icon: '🚀',
     title: 'Deployment',
     description: 'Smooth, zero-downtime launches to production. We handle infrastructure setup, monitoring configuration, and provide a comprehensive handover documentation package.',
     tags: ['Zero Downtime', 'Monitoring', 'Documentation', 'Training'],
@@ -49,7 +49,7 @@ const steps = [
   },
   {
     num: '06',
-    icon: 'ðŸ›¡ï¸',
+    icon: '🛡️',
     title: 'Support & Growth',
     description: 'Our relationship doesn\'t end at launch. Ongoing maintenance, proactive monitoring, feature iterations, and strategic growth guidance keep your product ahead of the curve.',
     tags: ['24/7 Support', 'Optimization', 'Analytics', 'Growth'],

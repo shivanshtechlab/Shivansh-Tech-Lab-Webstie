@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
@@ -9,9 +9,9 @@ import { useCountUp } from '../../hooks/useCountUp';
 import './About.css';
 
 const highlights = [
-  { icon: 'ðŸ“…', label: 'Founded', value: '2015', sub: 'A decade of excellence' },
-  { icon: 'ðŸŒ', label: 'Global Reach', value: '30+', sub: 'Countries served' },
-  { icon: 'ðŸ’¡', label: 'Innovation', value: '#1', sub: 'Client-first mindset' },
+  { icon: '📅', label: 'Founded', value: '2015', sub: 'A decade of excellence' },
+  { icon: '🌍', label: 'Global Reach', value: '30+', sub: 'Countries served' },
+  { icon: '💡', label: 'Innovation', value: '#1', sub: 'Client-first mindset' },
 ];
 
 const timeline = [
@@ -71,10 +71,10 @@ export default function About() {
           <div className="about__left">
             <ScrollReveal variant="fadeLeft" delay={0.1}>
               <p className="about__body">
-                Since 2015, Shivansh Tech Lab has been at the forefront of digital transformation â€” helping startups disrupt industries and enterprises evolve with purpose. We don't just build software; we craft experiences that users love and businesses rely on.
+                Since 2015, Shivansh Tech Lab has been at the forefront of digital transformation — helping startups disrupt industries and enterprises evolve with purpose. We don't just build software; we craft experiences that users love and businesses rely on.
               </p>
               <p className="about__body">
-                From AI-powered platforms to seamless mobile apps, from enterprise ERP systems to dazzling SaaS products â€” every line of code we write is driven by precision, creativity, and an unwavering commitment to quality.
+                From AI-powered platforms to seamless mobile apps, from enterprise ERP systems to dazzling SaaS products — every line of code we write is driven by precision, creativity, and an unwavering commitment to quality.
               </p>
             </ScrollReveal>
 
@@ -133,19 +133,19 @@ export default function About() {
 
                 {/* Floating decorative cards */}
                 <div className="about__deco-card about__deco-card--1">
-                  <span className="about__deco-icon">ðŸš€</span>
+                  <span className="about__deco-icon">🚀</span>
                   <div>
                     <div className="about__deco-title">Latest Deploy</div>
-                    <div className="about__deco-sub">Production â€” 2m ago</div>
+                    <div className="about__deco-sub">Production — 2m ago</div>
                   </div>
                   <span className="about__deco-status about__deco-status--live">LIVE</span>
                 </div>
 
                 <div className="about__deco-card about__deco-card--2">
-                  <span className="about__deco-icon">â­</span>
+                  <span className="about__deco-icon">⭐</span>
                   <div>
                     <div className="about__deco-title">Client Review</div>
-                    <div className="about__deco-stars">â˜…â˜…â˜…â˜…â˜…</div>
+                    <div className="about__deco-stars">★★★★★</div>
                   </div>
                 </div>
 
@@ -154,7 +154,7 @@ export default function About() {
                   <div className="about__deco-orb about__deco-orb--b" />
                   <div className="about__deco-inner">
                     <div className="about__deco-ring" />
-                    <span className="about__deco-center-icon">ðŸ’Ž</span>
+                    <span className="about__deco-center-icon">💎</span>
                   </div>
                   <div className="about__deco-text">
                     <div className="about__deco-title">Premium Quality</div>

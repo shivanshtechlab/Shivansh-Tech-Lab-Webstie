@@ -548,3 +548,22 @@
     gap: 1.25rem;
   }
 }
+
+/* ── Skeleton ── */
+.pw__card--skel { pointer-events: none; }
+.pw__skel-img {
+  height: 210px;
+  background: linear-gradient(90deg, #1E293B 25%, #273347 50%, #1E293B 75%);
+  background-size: 200% 100%;
+  animation: pwSkel 1.4s ease-in-out infinite;
+}
+.pw__skel-line {
+  border-radius: 6px;
+  background: linear-gradient(90deg, #1E293B 25%, #273347 50%, #1E293B 75%);
+  background-size: 200% 100%;
+  animation: pwSkel 1.4s ease-in-out infinite;
+}
+@keyframes pwSkel {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

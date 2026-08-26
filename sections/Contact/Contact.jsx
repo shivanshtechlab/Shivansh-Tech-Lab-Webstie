@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -16,8 +16,8 @@ const services = [
 ];
 
 const budgets = [
-  'Under $5,000', '$5,000 â€“ $15,000', '$15,000 â€“ $30,000',
-  '$30,000 â€“ $75,000', '$75,000 â€“ $150,000', '$150,000+', 'Not sure yet',
+  'Under $5,000', '$5,000 – $15,000', '$15,000 – $30,000',
+  '$30,000 – $75,000', '$75,000 – $150,000', '$150,000+', 'Not sure yet',
 ];
 
 const socialLinks = [
@@ -36,10 +36,10 @@ const socialLinks = [
 ];
 
 const infoItems = [
-  { icon: 'âœ‰', label: 'Email', value: 'hello@Shivansh Tech Lab.com', href: 'mailto:hello@Shivansh Tech Lab.com' },
-  { icon: 'ðŸ“ž', label: 'Phone', value: '+1 (555) 987-6543', href: 'tel:+15559876543' },
-  { icon: 'ðŸ“', label: 'Address', value: '350 5th Avenue, New York, NY 10118', href: '#' },
-  { icon: 'ðŸ•', label: 'Availability', value: 'Monâ€“Fri: 9AM â€“ 6PM EST', href: null },
+  { icon: '✉', label: 'Email', value: 'hello@Shivansh Tech Lab.com', href: 'mailto:hello@Shivansh Tech Lab.com' },
+  { icon: '📞', label: 'Phone', value: '+1 (555) 987-6543', href: 'tel:+15559876543' },
+  { icon: '📍', label: 'Address', value: '350 5th Avenue, New York, NY 10118', href: '#' },
+  { icon: '🕐', label: 'Availability', value: 'Mon–Fri: 9AM – 6PM EST', href: null },
 ];
 
 function FloatLabel({ id, label, children }) {
@@ -132,7 +132,7 @@ export default function Contact() {
         </ScrollReveal>
 
         <div className="contact-layout">
-          {/* â”€â”€ Left: Info â”€â”€ */}
+          {/* ── Left: Info ── */}
           <ScrollReveal variant="fadeLeft">
             <div className="contact-info">
               <div className="contact-info__response">
@@ -177,7 +177,7 @@ export default function Contact() {
             </div>
           </ScrollReveal>
 
-          {/* â”€â”€ Right: Form â”€â”€ */}
+          {/* ── Right: Form ── */}
           <ScrollReveal variant="fadeRight" delay={0.1}>
             <div className="contact-form-wrap">
               <AnimatePresence mode="wait">
@@ -189,7 +189,7 @@ export default function Contact() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
                   >
-                    <div className="contact-success__icon">âœ“</div>
+                    <div className="contact-success__icon">✓</div>
                     <h3>Message Sent!</h3>
                     <p>Thank you! Our team will review your project and reach out within 24 hours.</p>
                     <button className="contact-success__reset" onClick={() => setSubmitted(false)}>

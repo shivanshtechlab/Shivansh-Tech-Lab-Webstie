@@ -1,21 +1,36 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Footer from '../../components/Footer/Footer';
-import { allProjects, PORTFOLIO_SECTIONS } from '../../data/projects';
 import './ProjectDetailPage.css';
 
-/* â”€â”€â”€ Icon helper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+const CAT_META = {
+  websites:   { label: 'Website Projects'     },
+  apps:       { label: 'Mobile Apps'          },
+  enterprise: { label: 'Dashboard · CRM · ERP'},
+  saas:       { label: 'SaaS Products'        },
+  ai:         { label: 'AI & ML Solutions'    },
+  design:     { label: 'Brand & Design'       },
+};
+
+/* ─── Icon helper ──────────────────────────────────────────── */
 const BackArrow = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
     <path d="M19 12H5M12 19l-7-7 7-7" />
   </svg>
 );
+const ExternalLink = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+    <polyline points="15 3 21 3 21 9"/>
+    <line x1="10" y1="14" x2="21" y2="3"/>
+  </svg>
+);
 
-/* â”€â”€â”€ Related card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Related card ─────────────────────────────────────────── */
 function RelatedCard({ project }) {
   const [imgError, setImgError] = useState(false);
   return (
@@ -29,7 +44,7 @@ function RelatedCard({ project }) {
     >
       <div className="pd__related-img-wrap">
         {imgError ? (
-          <div className="pd__related-img-fallback">ðŸ’»</div>
+          <div className="pd__related-img-fallback">💻</div>
         ) : (
           <img
             src={project.image}
@@ -55,38 +70,55 @@ function RelatedCard({ project }) {
   );
 }
 
-/* â”€â”€â”€ Main Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Main Page ────────────────────────────────────────────── */
 export default function ProjectDetailPage() {
   const { slug } = useParams();
   const router = useRouter();
+  const [project, setProject] = useState(null);
+  const [related, setRelated] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [imgErrors, setImgErrors] = useState({});
 
-  const project = allProjects.find(p => p.slug === slug);
-
   useEffect(() => {
-    if (!project) {
-      router.replace('/our-work');
-      return;
-    }
-    document.title = `${project.title} â€“ Shivansh Tech Lab`;
-    window.scrollTo(0, 0);
-  }, [project, router]);
+    if (!slug) return;
+    setLoading(true);
+    fetch(`/api/projects/${slug}`)
+      .then(r => r.json())
+      .then(async d => {
+        if (!d.success) { router.replace('/our-work'); return; }
+        const p = d.data;
+        setProject(p);
+        document.title = `${p.title} – Shivansh Tech Lab`;
+        window.scrollTo(0, 0);
+        /* fetch related: same category, exclude current */
+        const relRes = await fetch(`/api/projects?status=active&category=${p.category}`);
+        const relData = await relRes.json();
+        if (relData.success) {
+          setRelated(relData.data.filter(r => r.id !== p.id).slice(0, 3));
+        }
+      })
+      .catch(() => router.replace('/our-work'))
+      .finally(() => setLoading(false));
+  }, [slug, router]);
+
+  const handleImgError = (key) => setImgErrors(prev => ({ ...prev, [key]: true }));
+
+  if (loading) return (
+    <main className="pd">
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748B' }}>
+        Loading…
+      </div>
+    </main>
+  );
 
   if (!project) return null;
 
-  const section = PORTFOLIO_SECTIONS.find(s => s.id === project.category);
-
-  /* 3 related projects from same category, excluding current */
-  const related = allProjects
-    .filter(p => p.category === project.category && p.id !== project.id)
-    .slice(0, 3);
-
-  const handleImgError = (key) => setImgErrors(prev => ({ ...prev, [key]: true }));
+  const section = CAT_META[project.category];
 
   return (
     <main className="pd">
 
-      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="pd__hero">
         {!imgErrors.hero ? (
           <img
@@ -117,9 +149,26 @@ export default function ProjectDetailPage() {
               {section && (
                 <span className="pd__hero-category">{section.label}</span>
               )}
+
             </div>
             <h1 className="pd__hero-title">{project.title}</h1>
             <p className="pd__hero-desc">{project.desc}</p>
+
+            {/* Live Demo button */}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pd__live-demo-btn"
+                style={{ '--pd-accent': project.color, borderColor: `${project.color}60` }}
+              >
+                <span className="pd__live-demo-dot" style={{ background: project.color }} />
+                Live Demo
+                <ExternalLink />
+              </a>
+            )}
+
             <div className="pd__hero-meta">
               <div className="pd__hero-meta-item">
                 <span className="pd__hero-meta-label">Client</span>
@@ -145,11 +194,12 @@ export default function ProjectDetailPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Results strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Results strip ────────────────────────────────────── */}
+      {(project.results || []).length > 0 && (
       <section className="pd__results-strip">
         <div className="container">
           <div className="pd__results-grid">
-            {project.results.map((r, i) => (
+            {(project.results || []).map((r, i) => (
               <motion.div
                 key={r.label}
                 className="pd__result"
@@ -165,10 +215,11 @@ export default function ProjectDetailPage() {
           </div>
         </div>
       </section>
+      )}
 
       <div className="container pd__body">
 
-        {/* â”€â”€ Overview â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── Overview ─────────────────────────────────────────── */}
         <div className="pd__two-col">
           <motion.div
             className="pd__block"
@@ -194,7 +245,7 @@ export default function ProjectDetailPage() {
           </motion.div>
         </div>
 
-        {/* â”€â”€ Full description â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── Full description ─────────────────────────────────── */}
         <motion.div
           className="pd__overview"
           initial={{ opacity: 0, y: 20 }}
@@ -206,7 +257,7 @@ export default function ProjectDetailPage() {
           <p className="pd__overview-text">{project.fullDesc}</p>
         </motion.div>
 
-        {/* â”€â”€ Tech stack â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── Tech stack ───────────────────────────────────────── */}
         <motion.div
           className="pd__tech-wrap"
           initial={{ opacity: 0, y: 20 }}
@@ -216,7 +267,7 @@ export default function ProjectDetailPage() {
         >
           <span className="pd__block-label" style={{ color: project.color }}>Tech Stack</span>
           <div className="pd__tech-pills">
-            {project.tags.map(tag => (
+            {(project.tags || []).map(tag => (
               <span key={tag} className="pd__tech-pill" style={{ borderColor: `${project.color}30`, color: project.color }}>
                 {tag}
               </span>
@@ -226,8 +277,8 @@ export default function ProjectDetailPage() {
 
       </div>
 
-      {/* â”€â”€ Key Features â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="pd__features-section">
+      {/* ── Key Features ─────────────────────────────────────── */}
+      {(project.features || []).length > 0 && <section className="pd__features-section">
         <div className="container">
           <motion.div
             className="pd__section-head"
@@ -241,7 +292,7 @@ export default function ProjectDetailPage() {
             <p className="pd__section-sub">Every feature was designed to solve a real problem and deliver measurable value.</p>
           </motion.div>
           <div className="pd__features-grid">
-            {project.features.map((f, i) => (
+            {(project.features || []).map((f, i) => (
               <motion.div
                 key={f.title}
                 className="pd__feature"
@@ -262,9 +313,9 @@ export default function ProjectDetailPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section>}
 
-      {/* â”€â”€ Gallery â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Gallery ──────────────────────────────────────────── */}
       {project.gallery && project.gallery.length > 0 && (
         <section className="pd__gallery-section">
           <div className="container">
@@ -298,7 +349,7 @@ export default function ProjectDetailPage() {
                     />
                   ) : (
                     <div className="pd__gallery-fallback" style={{ background: `${project.color}10` }}>
-                      <span>ðŸ“·</span>
+                      <span>📷</span>
                     </div>
                   )}
                 </motion.div>
@@ -308,7 +359,7 @@ export default function ProjectDetailPage() {
         </section>
       )}
 
-      {/* â”€â”€ Related Projects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Related Projects ─────────────────────────────────── */}
       {related.length > 0 && (
         <section className="pd__related-section">
           <div className="container">
@@ -331,7 +382,7 @@ export default function ProjectDetailPage() {
         </section>
       )}
 
-      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="pd__cta-section">
         <div className="container">
           <motion.div

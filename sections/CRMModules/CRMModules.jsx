@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -104,7 +104,7 @@ function CRMMockup({ module }) {
           </div>
           <div className="crm-mockup__pipeline">
             <div className="crm-pipeline-fade" />
-            <div className="crm-pipeline-title">Sales Pipeline â€” Kanban View</div>
+            <div className="crm-pipeline-title">Sales Pipeline — Kanban View</div>
             <div className="crm-pipeline">
               {stages.map((stage, si) => (
                 <div key={stage} className="crm-pipeline__col">

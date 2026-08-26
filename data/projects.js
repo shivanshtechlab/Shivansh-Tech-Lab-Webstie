@@ -45,6 +45,7 @@ export const websiteProjects = [
     category: 'websites',
     color: '#FF6B6B',
     year: '2024',
+    liveUrl: 'https://bistronoir.com',
     client: 'Bistro Noir Group',
     industry: 'Food & Hospitality',
     duration: '6 weeks',

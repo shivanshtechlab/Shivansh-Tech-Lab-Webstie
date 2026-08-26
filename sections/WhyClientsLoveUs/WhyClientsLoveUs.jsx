@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'framer-motion';
@@ -89,7 +89,7 @@ export default function WhyClientsLoveUs() {
           <SectionTitle
             badge="CLIENT SUCCESS"
             title="Why Our Clients Never Leave"
-            subtitle="We don't just build software â€” we build long-term partnerships. Our results speak louder than promises."
+            subtitle="We don't just build software — we build long-term partnerships. Our results speak louder than promises."
           />
         </ScrollReveal>
 

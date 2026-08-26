@@ -3,7 +3,7 @@ export const websitePlans = [
   {
     id: 'web-1',
     name: 'Landing Page',
-    price: { one_time: 799 },
+    price: { one_time: 1999 },
     description: 'A stunning single-page site to capture leads and showcase your brand.',
     color: '#6C63FF',
     gradient: 'linear-gradient(135deg, #6C63FF 0%, #7C3AED 100%)',
@@ -25,13 +25,13 @@ export const websitePlans = [
   {
     id: 'web-2',
     name: 'Business Website',
-    price: { one_time: 2499 },
+    price: { one_time: 5999 },
     description: 'A full multi-page website with CMS so you can manage content yourself.',
     color: '#00D9FF',
     gradient: 'linear-gradient(135deg, #00D9FF 0%, #6C63FF 100%)',
     popular: true,
     features: [
-      { text: 'Up to 15 Custom Pages', included: true },
+      { text: '8 to 10 Custom Pages', included: true },
       { text: 'CMS (Content Management)', included: true },
       { text: 'Blog / News Module', included: true },
       { text: 'Advanced SEO & Sitemap', included: true },
@@ -47,7 +47,7 @@ export const websitePlans = [
   {
     id: 'web-3',
     name: 'E-Commerce Store',
-    price: { one_time: 5999 },
+    price: { one_time: 9999 },
     description: 'A full-featured online store with payment gateway, inventory & admin panel.',
     color: '#00E676',
     gradient: 'linear-gradient(135deg, #00E676 0%, #00D9FF 100%)',

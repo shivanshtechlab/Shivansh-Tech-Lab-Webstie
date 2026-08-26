@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { motion } from 'framer-motion';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
@@ -47,7 +47,7 @@ export default function Industries() {
           <SectionTitle
             badge="INDUSTRIES WE SERVE"
             title="Transforming Every Industry"
-            subtitle="Deep domain expertise across 10+ verticals â€” we understand your business, not just your tech stack."
+            subtitle="Deep domain expertise across 10+ verticals — we understand your business, not just your tech stack."
           />
         </ScrollReveal>
 

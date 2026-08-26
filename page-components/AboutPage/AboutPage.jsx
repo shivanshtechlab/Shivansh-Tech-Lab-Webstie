@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -17,27 +17,27 @@ const companyStats = [
 
 const values = [
   {
-    icon: 'ðŸ’¡',
+    icon: '💡',
     title: 'Innovation',
     desc: 'We embrace cutting-edge technologies and creative thinking to solve problems in ways others haven\'t imagined.',
     color: '#6C63FF',
   },
   {
-    icon: 'âœ¨',
+    icon: '✨',
     title: 'Quality',
-    desc: 'Every line of code, every pixel, every interaction â€” crafted to meet the highest standards of excellence.',
+    desc: 'Every line of code, every pixel, every interaction — crafted to meet the highest standards of excellence.',
     color: '#00D9FF',
   },
   {
-    icon: 'âš¡',
+    icon: '⚡',
     title: 'Speed',
     desc: 'Rapid delivery without cutting corners. We use Agile practices to ship fast and iterate faster.',
     color: '#7C3AED',
   },
   {
-    icon: 'ðŸ¤',
+    icon: '🤝',
     title: 'Partnership',
-    desc: 'We don\'t just build for you â€” we build with you. Your success is our success.',
+    desc: 'We don\'t just build for you — we build with you. Your success is our success.',
     color: '#00E676',
   },
 ];
@@ -46,7 +46,7 @@ const timeline = [
   { year: '2015', title: 'Founded', desc: 'Shivansh Tech Lab born in a small office with 3 developers and a mission to redefine digital excellence.' },
   { year: '2017', title: 'First Enterprise Client', desc: 'Landed our first Fortune 500 client and delivered a 300-person ERP system in record time.' },
   { year: '2019', title: '50+ Team', desc: 'Grew to 50+ specialists across design, engineering, AI, and cloud infrastructure.' },
-  { year: '2021', title: 'International Expansion', desc: 'Opened offices in London, Dubai, and Singapore â€” serving clients across 15+ countries.' },
+  { year: '2021', title: 'International Expansion', desc: 'Opened offices in London, Dubai, and Singapore — serving clients across 15+ countries.' },
   { year: '2023', title: 'AI Division', desc: 'Launched dedicated AI/ML division, delivering GPT-powered enterprise solutions.' },
   { year: '2025', title: '100+ Projects', desc: 'Surpassed 100 successful project deliveries with 98% client satisfaction rate.' },
 ];
@@ -80,7 +80,7 @@ function TeamCard({ member, index }) {
 
 export default function AboutPage() {
   useEffect(() => {
-    document.title = 'About â€“ Shivansh Tech Lab';
+    document.title = 'About – Shivansh Tech Lab';
   }, []);
 
   return (
@@ -110,7 +110,7 @@ export default function AboutPage() {
                 Shivansh Tech Lab was founded in 2015 with a simple belief: great software should be accessible to any business, regardless of size. What started as a 3-person team in a co-working space has grown into a global agency with offices across 4 continents.
               </p>
               <p className="ap__story-text">
-                Our mission is to transform ambitious ideas into world-class digital products. We combine deep technical expertise with design thinking and business strategy to deliver solutions that don't just work â€” they win.
+                Our mission is to transform ambitious ideas into world-class digital products. We combine deep technical expertise with design thinking and business strategy to deliver solutions that don't just work — they win.
               </p>
               <p className="ap__story-text">
                 Today, we're proud to have delivered 100+ projects across 15+ countries, partnering with startups and Fortune 500 companies alike to build the future of digital business.

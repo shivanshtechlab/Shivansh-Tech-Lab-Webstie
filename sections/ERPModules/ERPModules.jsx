@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -106,7 +106,7 @@ export default function ERPModules() {
           <SectionTitle
             badge="ERP SOLUTION"
             title="Complete Enterprise Resource Planning"
-            subtitle="A modular ERP system built for the way modern businesses operate â€” scalable, integrated, and intelligent."
+            subtitle="A modular ERP system built for the way modern businesses operate — scalable, integrated, and intelligent."
           />
         </ScrollReveal>
 

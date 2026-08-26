@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -77,7 +77,7 @@ export default function Testimonials() {
           <SectionTitle
             badge="TESTIMONIALS"
             title="Words From Our Happy Clients"
-            subtitle="Don't take our word for it â€” hear directly from the teams who've transformed their businesses with us."
+            subtitle="Don't take our word for it — hear directly from the teams who've transformed their businesses with us."
           />
         </ScrollReveal>
 
@@ -120,7 +120,7 @@ export default function Testimonials() {
                   </div>
                   <div className="testi-card__info">
                     <span className="testi-card__name">{t.name}</span>
-                    <span className="testi-card__role">{t.role} Â· {t.company}</span>
+                    <span className="testi-card__role">{t.role} · {t.company}</span>
                   </div>
                   <div className="testi-card__right">
                     <StarRating rating={t.rating} />

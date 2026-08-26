@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect } from 'react';
 import Link from 'next/link';
@@ -8,7 +8,7 @@ import Footer from '../../components/Footer/Footer';
 import { websitePlans, dashboardPlans, mobilePlans, packagePlans } from '../../data/pricingFull';
 import './PricingPage.css';
 
-/* â”€â”€ Check / Cross icon â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Check / Cross icon ─────────────────────────────────── */
 function CheckIcon({ included }) {
   return included ? (
     <svg className="pr-feat-icon pr-feat-icon--check" viewBox="0 0 20 20" fill="none">
@@ -23,7 +23,7 @@ function CheckIcon({ included }) {
   );
 }
 
-/* â”€â”€ Standard plan card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Standard plan card ─────────────────────────────────── */
 function PlanCard({ plan, index }) {
   const price = plan.price?.one_time;
   const isCustom = price === null || price === undefined;
@@ -37,7 +37,7 @@ function PlanCard({ plan, index }) {
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.45, delay: index * 0.1 }}
     >
-      {plan.popular && <div className="pr-card__badge">â­ Most Popular</div>}
+      {plan.popular && <div className="pr-card__badge">⭐ Most Popular</div>}
       <div className="pr-card__glow" style={{ background: plan.gradient }} />
 
       <div className="pr-card__head">
@@ -87,7 +87,7 @@ function PlanCard({ plan, index }) {
   );
 }
 
-/* â”€â”€ Package card (includes list) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Package card (includes list) ───────────────────────── */
 function PackageCard({ plan, index }) {
   const price = plan.price?.one_time;
   const isCustom = price === null || price === undefined;
@@ -101,7 +101,7 @@ function PackageCard({ plan, index }) {
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.45, delay: index * 0.1 }}
     >
-      {plan.popular && <div className="pr-card__badge">â­ Best Value</div>}
+      {plan.popular && <div className="pr-card__badge">⭐ Best Value</div>}
       <div className="pr-card__glow" style={{ background: plan.gradient }} />
 
       <div className="pr-card__head">
@@ -167,7 +167,7 @@ function PackageCard({ plan, index }) {
   );
 }
 
-/* â”€â”€ Section header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Section header ─────────────────────────────────────── */
 function SectionHead({ icon, badge, title, subtitle, color }) {
   return (
     <motion.div
@@ -187,10 +187,10 @@ function SectionHead({ icon, badge, title, subtitle, color }) {
   );
 }
 
-/* â”€â”€ Main Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Main Page ──────────────────────────────────────────── */
 export default function PricingPage() {
   useEffect(() => {
-    document.title = 'Pricing â€“ Shivansh Tech Lab';
+    document.title = 'Pricing – Shivansh Tech Lab';
   }, []);
 
   return (
@@ -199,18 +199,18 @@ export default function PricingPage() {
         badge="PRICING"
         title="Simple, Transparent Pricing"
         titleHighlight="Transparent Pricing"
-        subtitle="No hidden fees. No surprises. Choose the plan that fits your goals â€” from a single website to a complete digital ecosystem."
+        subtitle="No hidden fees. No surprises. Choose the plan that fits your goals — from a single website to a complete digital ecosystem."
         breadcrumb="Pricing"
       />
 
-      {/* â”€â”€ Section 1: Website â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Section 1: Website ─────────────────────────── */}
       <section className="pr-section pr-section--alt" id="website-pricing">
         <div className="pr-container">
           <SectionHead
-            icon="ðŸŒ"
+            icon="🌐"
             badge="WEBSITE DEVELOPMENT"
             title="Website Pricing"
-            subtitle="From a single landing page to a full e-commerce store â€” every site crafted from scratch, mobile-first, and SEO-ready."
+            subtitle="From a single landing page to a full e-commerce store — every site crafted from scratch, mobile-first, and SEO-ready."
             color="#6C63FF"
           />
           <div className="pr-grid pr-grid--3">
@@ -221,12 +221,12 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Section 2: Dashboard / CRM / ERP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Section 2: Dashboard / CRM / ERP ──────────── */}
       <section className="pr-section" id="dashboard-pricing">
         <div className="pr-container">
           <SectionHead
-            icon="ðŸ“Š"
-            badge="DASHBOARD Â· CRM Â· ERP"
+            icon="📊"
+            badge="DASHBOARD · CRM · ERP"
             title="Business Software Pricing"
             subtitle="Custom dashboards, CRM systems, and enterprise ERP solutions tailored to your workflows and business scale."
             color="#FFB800"
@@ -239,14 +239,14 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Section 3: Mobile App â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Section 3: Mobile App ──────────────────────── */}
       <section className="pr-section pr-section--alt" id="mobile-pricing">
         <div className="pr-container">
           <SectionHead
-            icon="ðŸ“±"
+            icon="📱"
             badge="MOBILE APP DEVELOPMENT"
             title="Mobile App Pricing"
-            subtitle="Native-quality iOS and Android apps â€” from simple single-platform apps to AI-powered cross-platform solutions."
+            subtitle="Native-quality iOS and Android apps — from simple single-platform apps to AI-powered cross-platform solutions."
             color="#FF6B6B"
           />
           <div className="pr-grid pr-grid--3">
@@ -257,14 +257,14 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Section 4: Full Package â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Section 4: Full Package ────────────────────── */}
       <section className="pr-section pr-section--package" id="package-pricing">
         <div className="pr-container">
           <SectionHead
-            icon="ðŸš€"
+            icon="🚀"
             badge="FULL PACKAGES"
             title="Website + Dashboard + App Bundles"
-            subtitle="Get everything together at a bundled price â€” website, business software, and mobile app in one seamless project."
+            subtitle="Get everything together at a bundled price — website, business software, and mobile app in one seamless project."
             color="#00D9FF"
           />
           <div className="pr-grid pr-grid--3">
@@ -275,7 +275,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* â”€â”€ FAQ note + CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── FAQ note + CTA ────────────────────────────── */}
       <section className="pr-section pr-cta-section">
         <div className="pr-container">
           <motion.div
@@ -288,13 +288,13 @@ export default function PricingPage() {
             <div className="pr-cta-glow" />
             <h2 className="pr-cta-title">Not Sure Which Plan to Choose?</h2>
             <p className="pr-cta-desc">
-              Every project is unique. Talk to us and we'll recommend the best solution for your goals and budget â€” no commitment required.
+              Every project is unique. Talk to us and we'll recommend the best solution for your goals and budget — no commitment required.
             </p>
             <div className="pr-cta-actions">
               <Link href="/contact" className="pr-cta-btn pr-cta-btn--primary">Get a Free Quote</Link>
               <Link href="/our-work" className="pr-cta-btn pr-cta-btn--ghost">See Our Work</Link>
             </div>
-            <p className="pr-cta-note">All prices in USD Â· One-time project fee Â· No monthly lock-in</p>
+            <p className="pr-cta-note">All prices in USD · One-time project fee · No monthly lock-in</p>
           </motion.div>
         </div>
       </section>

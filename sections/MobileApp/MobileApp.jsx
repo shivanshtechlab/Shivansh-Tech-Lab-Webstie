@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { motion } from 'framer-motion';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
@@ -6,10 +6,10 @@ import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
 import './MobileApp.css';
 
 const FEATURES = [
-  { icon: 'âš¡', title: 'Cross-Platform', desc: 'One codebase for iOS and Android with native performance.' },
-  { icon: 'ðŸš€', title: 'Native Performance', desc: '60fps animations, hardware acceleration, smooth as butter.' },
-  { icon: 'ðŸ“¡', title: 'Offline Support', desc: 'Full functionality even without an internet connection.' },
-  { icon: 'ðŸ””', title: 'Push Notifications', desc: 'Re-engage users with smart, targeted push notifications.' },
+  { icon: '⚡', title: 'Cross-Platform', desc: 'One codebase for iOS and Android with native performance.' },
+  { icon: '🚀', title: 'Native Performance', desc: '60fps animations, hardware acceleration, smooth as butter.' },
+  { icon: '📡', title: 'Offline Support', desc: 'Full functionality even without an internet connection.' },
+  { icon: '🔔', title: 'Push Notifications', desc: 'Re-engage users with smart, targeted push notifications.' },
 ];
 
 const PARTICLES = Array.from({ length: 20 }, (_, i) => ({
@@ -36,7 +36,7 @@ function AppScreen1() {
       <div className="app-screen__header">
         <div className="app-s1__avatar" />
         <div className="app-s1__greeting">
-          <div className="app-s1__hello">Good morning, Alex ðŸ‘‹</div>
+          <div className="app-s1__hello">Good morning, Alex 👋</div>
           <div className="app-s1__sub">Your summary for today</div>
         </div>
         <div className="app-s1__notif" />
@@ -72,7 +72,7 @@ function AppScreen1() {
         </div>
       ))}
       <div className="app-s1__bottom-nav">
-        {['ðŸ ', 'ðŸ“Š', 'ðŸ’³', 'ðŸ‘¤'].map((ic, i) => (
+        {['🏠', '📊', '💳', '👤'].map((ic, i) => (
           <div key={i} className={`app-s1__nav-item${i === 0 ? ' app-s1__nav-item--active' : ''}`}>{ic}</div>
         ))}
       </div>
@@ -84,9 +84,9 @@ function AppScreen2() {
   return (
     <div className="app-screen app-screen--2">
       <div className="app-s2__header">
-        <div className="app-s2__back">â†</div>
+        <div className="app-s2__back">←</div>
         <div className="app-s2__title">Fitness Dashboard</div>
-        <div className="app-s2__share">â‹¯</div>
+        <div className="app-s2__share">⋯</div>
       </div>
       <div className="app-s2__ring-area">
         <div className="app-s2__ring-wrap">
@@ -108,9 +108,9 @@ function AppScreen2() {
       </div>
       <div className="app-s2__stats">
         {[
-          { icon: 'ðŸ”¥', val: '842', label: 'Calories' },
-          { icon: 'ðŸ‘Ÿ', val: '8,421', label: 'Steps' },
-          { icon: 'â±ï¸', val: '48m', label: 'Active' },
+          { icon: '🔥', val: '842', label: 'Calories' },
+          { icon: '👟', val: '8,421', label: 'Steps' },
+          { icon: '⏱️', val: '48m', label: 'Active' },
         ].map((s, i) => (
           <div key={i} className="app-s2__stat">
             <span className="app-s2__stat-icon">{s.icon}</span>
@@ -133,7 +133,7 @@ function AppScreen2() {
         </div>
       </div>
       <div className="app-s2__bottom-nav">
-        {['ðŸ ', 'ðŸ‹ï¸', 'ðŸ“Š', 'ðŸ‘¤'].map((ic, i) => (
+        {['🏠', '🏋️', '📊', '👤'].map((ic, i) => (
           <div key={i} className={`app-s2__nav-item${i === 1 ? ' app-s2__nav-item--active' : ''}`}>{ic}</div>
         ))}
       </div>
@@ -162,7 +162,7 @@ export default function MobileApp() {
           <SectionTitle
             badge="MOBILE APPS"
             title="Native Mobile Experiences Users Love"
-            subtitle="From fintech to fitness â€” we craft mobile apps that users return to every single day."
+            subtitle="From fintech to fitness — we craft mobile apps that users return to every single day."
           />
         </ScrollReveal>
 

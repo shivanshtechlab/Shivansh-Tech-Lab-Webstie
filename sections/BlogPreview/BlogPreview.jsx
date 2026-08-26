@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
@@ -50,7 +50,7 @@ function FeaturedPost({ post }) {
             <AuthorAvatar avatar={post.author.avatar} name={post.author.name} color={post.color} />
             <div className="blog-featured__date-time">
               <span>{post.date}</span>
-              <span className="blog-featured__dot">Â·</span>
+              <span className="blog-featured__dot">·</span>
               <span>{post.readTime}</span>
             </div>
           </div>

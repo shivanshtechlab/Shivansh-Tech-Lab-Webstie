@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# webpack filesystem cache (prevents it from being committed to git)
+/.next/cache/webpack/
+
 # production
 /build
 

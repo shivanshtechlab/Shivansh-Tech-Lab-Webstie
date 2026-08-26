@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -82,7 +82,7 @@ function PortfolioCard({ item, index }) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             >
-              View Case Study <span>â†’</span>
+              View Case Study <span>→</span>
             </motion.button>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function Portfolio() {
           <SectionTitle
             badge="OUR WORK"
             title="Projects That Define Excellence"
-            subtitle="From startup MVPs to enterprise platforms â€” each project showcases our commitment to performance, design, and measurable results."
+            subtitle="From startup MVPs to enterprise platforms — each project showcases our commitment to performance, design, and measurable results."
           />
         </ScrollReveal>
 
@@ -158,7 +158,7 @@ export default function Portfolio() {
               whileTap={{ scale: 0.97 }}
             >
               <span>View All Projects</span>
-              <span className="pf-cta__arrow">â†’</span>
+              <span className="pf-cta__arrow">→</span>
             </motion.button>
             <p className="pf-cta__note">120+ projects delivered across 30+ countries</p>
           </div>

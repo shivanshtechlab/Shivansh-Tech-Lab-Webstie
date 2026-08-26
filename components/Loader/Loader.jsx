@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -92,7 +92,7 @@ export default function Loader() {
                       ease: [0.34, 1.56, 0.64, 1],
                     }}
                   >
-                    {letter === ' ' ? 'Â ' : letter}
+                    {letter === ' ' ? ' ' : letter}
                   </motion.span>
                 ))}
               </div>

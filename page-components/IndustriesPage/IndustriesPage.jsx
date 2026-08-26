@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -11,19 +11,19 @@ import './IndustriesPage.css';
 const approachSteps = [
   {
     step: '01',
-    icon: 'ðŸ”',
+    icon: '🔍',
     title: 'Understand',
     desc: 'We immerse ourselves in your industry, studying regulations, workflows, user behaviors, and competitive landscape.',
   },
   {
     step: '02',
-    icon: 'ðŸŽ¨',
+    icon: '🎨',
     title: 'Design',
-    desc: 'We craft solutions tailored to your sector â€” whether HIPAA compliance for healthcare or PCI-DSS for finance.',
+    desc: 'We craft solutions tailored to your sector — whether HIPAA compliance for healthcare or PCI-DSS for finance.',
   },
   {
     step: '03',
-    icon: 'ðŸš€',
+    icon: '🚀',
     title: 'Deliver',
     desc: 'We ship battle-tested, scalable software and provide ongoing support as your industry evolves.',
   },
@@ -66,7 +66,7 @@ function IndustryCard({ industry, index }) {
 
 export default function IndustriesPage() {
   useEffect(() => {
-    document.title = 'Industries â€“ Shivansh Tech Lab';
+    document.title = 'Industries – Shivansh Tech Lab';
   }, []);
 
   return (
@@ -75,7 +75,7 @@ export default function IndustriesPage() {
         badge="INDUSTRIES WE SERVE"
         title="We Serve Every Industry"
         titleHighlight="Every Industry"
-        subtitle="Deep domain expertise across 10+ verticals. We don't just build software â€” we understand your world."
+        subtitle="Deep domain expertise across 10+ verticals. We don't just build software — we understand your world."
         breadcrumb="Industries"
       />
 

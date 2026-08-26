@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useRef } from 'react';
 import { trustedCompanies } from '../../data/trustedCompanies';
@@ -24,7 +24,7 @@ export default function TrustedCompanies() {
           </p>
         </div>
 
-        {/* Row 1 â€” scrolls left */}
+        {/* Row 1 — scrolls left */}
         <div className="trusted__track-wrapper">
           <div className="trusted__fade trusted__fade--left" aria-hidden="true" />
           <div className="trusted__fade trusted__fade--right" aria-hidden="true" />
@@ -35,7 +35,7 @@ export default function TrustedCompanies() {
           </div>
         </div>
 
-        {/* Row 2 â€” scrolls right */}
+        {/* Row 2 — scrolls right */}
         <div className="trusted__track-wrapper">
           <div className="trusted__fade trusted__fade--left" aria-hidden="true" />
           <div className="trusted__fade trusted__fade--right" aria-hidden="true" />

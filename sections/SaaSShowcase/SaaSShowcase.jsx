@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -32,37 +32,37 @@ const SAAS_EXAMPLES = [
 
 const FEATURES = [
   {
-    icon: 'âš¡',
+    icon: '⚡',
     title: 'Infinite Scalability',
     desc: 'Auto-scaling architecture handles millions of concurrent users with zero downtime.',
     color: '#6C63FF',
   },
   {
-    icon: 'ðŸ¢',
+    icon: '🏢',
     title: 'Multi-Tenancy',
     desc: 'Complete data isolation per tenant with custom branding and domain support.',
     color: '#00D9FF',
   },
   {
-    icon: 'ðŸ’³',
+    icon: '💳',
     title: 'Smart Billing',
     desc: 'Flexible subscription plans, usage-based pricing, and automated invoicing.',
     color: '#00E676',
   },
   {
-    icon: 'ðŸ“Š',
+    icon: '📊',
     title: 'Deep Analytics',
     desc: 'Real-time usage analytics, churn prediction, and revenue dashboards.',
     color: '#7C3AED',
   },
   {
-    icon: 'ðŸ”’',
+    icon: '🔒',
     title: 'Enterprise Security',
     desc: 'SOC2 compliant, SSO, 2FA, audit logs, and role-based access control.',
     color: '#FFB800',
   },
   {
-    icon: 'ðŸŒ',
+    icon: '🌍',
     title: 'Global CDN',
     desc: '200+ edge locations ensuring sub-50ms response times worldwide.',
     color: '#FF416C',
@@ -103,7 +103,7 @@ function SaaSMockup({ saas }) {
             ))}
             <div className="saas-sidenav__workspace">
               <div className="saas-sidenav__ws-label">Workspace</div>
-              <div className="saas-sidenav__ws-name">Acme Corp â–¾</div>
+              <div className="saas-sidenav__ws-name">Acme Corp ▾</div>
             </div>
           </div>
           <div className="saas-mockup__content">
@@ -116,10 +116,10 @@ function SaaSMockup({ saas }) {
             </div>
             <div className="saas-content__kpis">
               {[
-                { label: 'Monthly Revenue', val: '$128K', icon: 'ðŸ“ˆ' },
-                { label: 'Active Users', val: '8,491', icon: 'ðŸ‘¥' },
-                { label: 'Churn Rate', val: '1.2%', icon: 'ðŸ“‰' },
-                { label: 'NPS Score', val: '72', icon: 'â­' },
+                { label: 'Monthly Revenue', val: '$128K', icon: '📈' },
+                { label: 'Active Users', val: '8,491', icon: '👥' },
+                { label: 'Churn Rate', val: '1.2%', icon: '📉' },
+                { label: 'NPS Score', val: '72', icon: '⭐' },
               ].map((kpi, i) => (
                 <div key={i} className="saas-kpi" style={{ borderTop: `2px solid ${saas.color}` }}>
                   <div className="saas-kpi__icon">{kpi.icon}</div>
@@ -236,7 +236,7 @@ export default function SaaSShowcase() {
           <SectionTitle
             badge="SAAS PLATFORMS"
             title="SaaS That Scales to Infinity"
-            subtitle="We build multi-tenant SaaS platforms that power thousands of businesses â€” with the architecture to handle whatever comes next."
+            subtitle="We build multi-tenant SaaS platforms that power thousands of businesses — with the architecture to handle whatever comes next."
           />
         </ScrollReveal>
 
@@ -306,11 +306,11 @@ export default function SaaSShowcase() {
             <div className="saas-pricing-label">Flexible Pricing Models We Support:</div>
             <div className="saas-pricing-models">
               {[
-                { name: 'Per Seat', icon: 'ðŸ‘¤', desc: 'Per user/month' },
-                { name: 'Usage-Based', icon: 'ðŸ“Š', desc: 'Pay as you go' },
-                { name: 'Flat Rate', icon: 'ðŸ’°', desc: 'Fixed monthly' },
-                { name: 'Freemium', icon: 'ðŸš€', desc: 'Free + Paid tiers' },
-                { name: 'Enterprise', icon: 'ðŸ¢', desc: 'Custom contracts' },
+                { name: 'Per Seat', icon: '👤', desc: 'Per user/month' },
+                { name: 'Usage-Based', icon: '📊', desc: 'Pay as you go' },
+                { name: 'Flat Rate', icon: '💰', desc: 'Fixed monthly' },
+                { name: 'Freemium', icon: '🚀', desc: 'Free + Paid tiers' },
+                { name: 'Enterprise', icon: '🏢', desc: 'Custom contracts' },
               ].map((model, i) => (
                 <motion.div
                   key={model.name}

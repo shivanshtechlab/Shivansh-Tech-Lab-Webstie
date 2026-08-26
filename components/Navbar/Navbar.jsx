@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -10,7 +10,7 @@ import { useScrollY, useScrollProgress } from '../../hooks/useScrollAnimation';
 import { useTheme } from '../../context/ThemeContext';
 import './Navbar.css';
 
-/* â”€â”€â”€ Social SVG Icons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Social SVG Icons ─────────────────────────────────────────────────────── */
 const SocialIcon = ({ icon }) => {
   const icons = {
     linkedin: (
@@ -43,14 +43,14 @@ const SocialIcon = ({ icon }) => {
   return <span className="nav-social-svg">{icons[icon] || null}</span>;
 };
 
-/* â”€â”€â”€ Logo â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Logo ─────────────────────────────────────────────────────────────────── */
 const Logo = ({ onClick }) => (
   <Link href="/" className="nav-logo" onClick={onClick} aria-label="Shivansh Tech Lab Home">
     <Image src={logo} alt="Shivansh Tech Lab" className="nav-logo-img" priority />
   </Link>
 );
 
-/* â”€â”€â”€ Theme Toggle â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Theme Toggle ──────────────────────────────────────────────────────────── */
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
@@ -85,7 +85,7 @@ const ThemeToggle = () => {
   );
 };
 
-/* â”€â”€â”€ Mega Menu â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Mega Menu ─────────────────────────────────────────────────────────────── */
 const MegaMenu = ({ items, onClose }) => (
   <motion.div
     className="nav-mega-menu"
@@ -129,7 +129,7 @@ const MegaMenu = ({ items, onClose }) => (
   </motion.div>
 );
 
-/* â”€â”€â”€ Hamburger Icon â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Hamburger Icon ────────────────────────────────────────────────────────── */
 const HamburgerIcon = ({ isOpen }) => (
   <div className="nav-hamburger-icon" aria-hidden="true">
     <motion.span
@@ -147,8 +147,8 @@ const HamburgerIcon = ({ isOpen }) => (
   </div>
 );
 
-/* â”€â”€â”€ Mobile Menu â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-const MobileMenu = ({ isOpen, onClose }) => {
+/* ─── Mobile Menu ───────────────────────────────────────────────────────────── */
+const MobileMenu = ({ isOpen, onClose, serviceMenuItems }) => {
   const [expandedService, setExpandedService] = useState(false);
 
   return (
@@ -214,7 +214,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.25 }}
                           >
-                            {link.children.map((child) => (
+                            {(serviceMenuItems ?? link.children).map((child) => (
                               <Link
                                 key={child.label}
                                 href={child.href}
@@ -277,15 +277,29 @@ const MobileMenu = ({ isOpen, onClose }) => {
   );
 };
 
-/* â”€â”€â”€ Navbar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Navbar ────────────────────────────────────────────────────────────────── */
 export default function Navbar() {
   const scrollY = useScrollY();
   const progress = useScrollProgress();
-  const [megaMenuOpen, setMegaMenuOpen] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [megaMenuOpen,   setMegaMenuOpen]   = useState(false);
+  const [mobileOpen,     setMobileOpen]     = useState(false);
+  const [serviceTypes,   setServiceTypes]   = useState([]);
   const lastScrollYRef = useRef(0);
   const [hidden, setHidden] = useState(false);
   const megaMenuTimer = useRef(null);
+
+  /* fetch service types from backend */
+  useEffect(() => {
+    fetch('/api/service-types?status=active')
+      .then(r => r.json())
+      .then(d => { if (d.success) setServiceTypes(d.data) })
+      .catch(() => {});
+  }, []);
+
+  /* build dynamic service menu items */
+  const serviceMenuItems = serviceTypes.length > 0
+    ? serviceTypes.map(st => ({ label: st.name, icon: st.icon, href: '/services' }))
+    : null; // null = use static fallback from NAV_LINKS
 
   /* hide/show on scroll direction */
   useEffect(() => {
@@ -371,7 +385,7 @@ export default function Navbar() {
                   <AnimatePresence>
                     {megaMenuOpen && (
                       <MegaMenu
-                        items={link.children}
+                        items={serviceMenuItems ?? link.children}
                         onClose={() => setMegaMenuOpen(false)}
                       />
                     )}
@@ -402,7 +416,7 @@ export default function Navbar() {
       </motion.header>
 
       {/* Mobile Menu */}
-      <MobileMenu isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
+      <MobileMenu isOpen={mobileOpen} onClose={() => setMobileOpen(false)} serviceMenuItems={serviceMenuItems} />
     </>
   );
 }

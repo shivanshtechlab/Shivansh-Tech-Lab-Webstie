@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef, useCallback } from 'react';
 import { useApp } from '../../context/AppContext';
@@ -25,7 +25,7 @@ export default function CustomCursor() {
   const rafId = useRef(null);
   const isMobile = useRef(false);
 
-  // â”€â”€ Spawn a trail particle â”€â”€
+  // ── Spawn a trail particle ──
   const spawnTrail = useCallback((x, y) => {
     const el = document.createElement('div');
     el.className = 'cursor-trail-particle';
@@ -53,7 +53,7 @@ export default function CustomCursor() {
     }
   }, []);
 
-  // â”€â”€ Animation loop â”€â”€
+  // ── Animation loop ──
   const tick = useCallback(() => {
     if (!dotRef.current || !ringRef.current) {
       rafId.current = requestAnimationFrame(tick);
@@ -138,7 +138,7 @@ export default function CustomCursor() {
     };
   }, [tick]);
 
-  // â”€â”€ Update variant classes â”€â”€
+  // ── Update variant classes ──
   useEffect(() => {
     const dot = dotRef.current;
     const ring = ringRef.current;

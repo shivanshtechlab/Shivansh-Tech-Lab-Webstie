@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
@@ -25,9 +25,9 @@ function FeaturedPost({ post }) {
       <div className="bp__featured-content">
         <div className="bp__featured-meta">
           <span className="bp__post-category" style={{ color: post.color }}>{post.category}</span>
-          <span className="bp__post-meta-sep" aria-hidden="true">Â·</span>
+          <span className="bp__post-meta-sep" aria-hidden="true">·</span>
           <span className="bp__post-date">{post.date}</span>
-          <span className="bp__post-meta-sep" aria-hidden="true">Â·</span>
+          <span className="bp__post-meta-sep" aria-hidden="true">·</span>
           <span className="bp__post-read">{post.readTime}</span>
         </div>
         <h2 className="bp__featured-title">{post.title}</h2>
@@ -109,7 +109,7 @@ export default function BlogPage() {
   const [subStatus, setSubStatus] = useState('idle');
 
   useEffect(() => {
-    document.title = 'Blog â€“ Shivansh Tech Lab';
+    document.title = 'Blog – Shivansh Tech Lab';
   }, []);
 
   const handleSubscribe = useCallback((e) => {

@@ -1,11 +1,10 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero/PageHero';
 import Footer from '../../components/Footer/Footer';
-import { PORTFOLIO_SECTIONS } from '../../data/projects';
 import './OurWorkPage.css';
 
 const stats = [
@@ -15,9 +14,36 @@ const stats = [
   { value: '15+',  label: 'Countries Served' },
 ];
 
-/* â”€â”€â”€ Project Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+const CAT_META = {
+  websites:   { label: 'Website Projects',      badge: '01', accent: '#6C63FF', icon: '💻' },
+  apps:       { label: 'Mobile Apps',            badge: '02', accent: '#00D9FF', icon: '📱' },
+  enterprise: { label: 'Dashboard · CRM · ERP',  badge: '03', accent: '#7C3AED', icon: '📊' },
+  saas:       { label: 'SaaS Products',          badge: '04', accent: '#00E676', icon: '☁️' },
+  ai:         { label: 'AI & ML Solutions',      badge: '05', accent: '#A855F7', icon: '🤖' },
+  design:     { label: 'Brand & Design',         badge: '06', accent: '#F43F5E', icon: '🎨' },
+};
+
+const CAT_ORDER = ['websites', 'apps', 'enterprise', 'saas', 'ai', 'design'];
+
+/* ─── Skeleton ─────────────────────────────────────────────── */
+function SkeletonCard() {
+  return (
+    <div className="pw__card pw__card--skel">
+      <div className="pw__card-img-wrap pw__skel-img" />
+      <div className="pw__card-body">
+        <div className="pw__skel-line" style={{ width: '40%', height: 14 }} />
+        <div className="pw__skel-line" style={{ width: '75%', height: 20, marginTop: 8 }} />
+        <div className="pw__skel-line" style={{ width: '90%', height: 14, marginTop: 8 }} />
+        <div className="pw__skel-line" style={{ width: '60%', height: 14, marginTop: 4 }} />
+      </div>
+    </div>
+  );
+}
+
+/* ─── Project Card ─────────────────────────────────────────── */
 function ProjectCard({ project, index }) {
   const [imgError, setImgError] = useState(false);
+  const catIcon = CAT_META[project.category]?.icon || '💻';
 
   return (
     <motion.article
@@ -29,13 +55,7 @@ function ProjectCard({ project, index }) {
       transition={{ duration: 0.45, delay: (index % 3) * 0.08 }}
     >
       <div className="pw__card-img-wrap">
-        {imgError ? (
-          <div className="pw__card-img-fallback">
-            <span className="pw__card-img-icon">
-              {project.category === 'apps' ? 'ðŸ“±' : project.category === 'enterprise' ? 'ðŸ“Š' : 'ðŸ’»'}
-            </span>
-          </div>
-        ) : (
+        {project.image && !imgError ? (
           <img
             src={project.image}
             alt={project.title}
@@ -43,12 +63,16 @@ function ProjectCard({ project, index }) {
             loading="lazy"
             onError={() => setImgError(true)}
           />
+        ) : (
+          <div className="pw__card-img-fallback">
+            <span className="pw__card-img-icon">{catIcon}</span>
+          </div>
         )}
         <div className="pw__card-overlay">
           <span className="pw__card-type" style={{ color: project.color }}>{project.type}</span>
           <p className="pw__card-overlay-desc">{project.desc}</p>
           <div className="pw__card-overlay-tags">
-            {project.tags.slice(0, 4).map(t => (
+            {(project.tags || []).slice(0, 4).map(t => (
               <span key={t} className="pw__tag">{t}</span>
             ))}
           </div>
@@ -68,17 +92,17 @@ function ProjectCard({ project, index }) {
       <div className="pw__card-body">
         <div className="pw__card-meta">
           <span className="pw__card-badge" style={{ background: `${project.color}18`, color: project.color }}>
-            {project.type}
+            {project.type || CAT_META[project.category]?.label}
           </span>
           <span className="pw__card-year">{project.year}</span>
         </div>
         <h3 className="pw__card-title">{project.title}</h3>
         <p className="pw__card-desc">{project.desc}</p>
         <div className="pw__card-tags">
-          {project.tags.slice(0, 3).map(t => (
+          {(project.tags || []).slice(0, 3).map(t => (
             <span key={t} className="pw__card-tag-small">{t}</span>
           ))}
-          {project.tags.length > 3 && (
+          {(project.tags || []).length > 3 && (
             <span className="pw__card-tag-small pw__card-tag-more">+{project.tags.length - 3}</span>
           )}
         </div>
@@ -97,10 +121,11 @@ function ProjectCard({ project, index }) {
   );
 }
 
-/* â”€â”€â”€ Portfolio Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-function PortfolioSection({ section }) {
+/* ─── Portfolio Section ────────────────────────────────────── */
+function PortfolioSection({ cat, projects }) {
+  const meta = CAT_META[cat] || { label: cat, badge: '—', accent: '#6C63FF', icon: '💻' };
   return (
-    <section className="pw__section" id={section.id}>
+    <section className="pw__section" id={cat}>
       <div className="container">
         <motion.div
           className="pw__section-head"
@@ -109,21 +134,21 @@ function PortfolioSection({ section }) {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="pw__section-badge" style={{ color: section.accent, borderColor: `${section.accent}30` }}>
-            <span className="pw__section-num">{section.badge}</span>
-            <span className="pw__section-divider" style={{ background: section.accent }} />
-            <span>{section.label}</span>
+          <div className="pw__section-badge" style={{ color: meta.accent, borderColor: `${meta.accent}30` }}>
+            <span className="pw__section-num">{meta.badge}</span>
+            <span className="pw__section-divider" style={{ background: meta.accent }} />
+            <span>{meta.label}</span>
           </div>
           <h2 className="pw__section-title">
-            Our <span className="gradient-text">{section.label}</span>
+            Our <span className="gradient-text">{meta.label}</span>
           </h2>
           <p className="pw__section-sub">
-            {section.projects.length} projects delivered with precision, creativity and cutting-edge technology.
+            {projects.length} project{projects.length !== 1 ? 's' : ''} delivered with precision, creativity and cutting-edge technology.
           </p>
         </motion.div>
 
         <div className="pw__grid">
-          {section.projects.map((p, i) => (
+          {projects.map((p, i) => (
             <ProjectCard key={p.id} project={p} index={i} />
           ))}
         </div>
@@ -132,29 +157,37 @@ function PortfolioSection({ section }) {
   );
 }
 
-/* â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Page ─────────────────────────────────────────────────── */
 export default function OurWorkPage() {
-  const [activeNav, setActiveNav] = useState('websites');
+  const [projects,  setProjects]  = useState([]);
+  const [loading,   setLoading]   = useState(true);
+  const [activeNav, setActiveNav] = useState('');
 
   useEffect(() => {
-    document.title = 'Our Work â€“ Shivansh Tech Lab';
+    document.title = 'Our Work – Shivansh Tech Lab';
+    fetch('/api/projects?status=active')
+      .then(r => r.json())
+      .then(d => { if (d.success) setProjects(d.data) })
+      .catch(() => {})
+      .finally(() => setLoading(false));
   }, []);
 
+  /* Group by category, keep CAT_ORDER */
+  const sections = CAT_ORDER
+    .map(cat => ({ cat, projects: projects.filter(p => p.category === cat) }))
+    .filter(s => s.projects.length > 0);
+
   useEffect(() => {
+    if (!sections.length) return;
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) setActiveNav(entry.target.id);
-        });
-      },
-      { threshold: 0.25 }
+      entries => entries.forEach(e => { if (e.isIntersecting) setActiveNav(e.target.id) }),
+      { threshold: 0.2, rootMargin: '-10% 0px -60% 0px' }
     );
-    PORTFOLIO_SECTIONS.forEach(s => {
-      const el = document.getElementById(s.id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
-  }, []);
+    const els = sections.map(s => document.getElementById(s.cat)).filter(Boolean);
+    els.forEach(el => observer.observe(el));
+    return () => { observer.disconnect(); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]);
 
   return (
     <main className="pw">
@@ -162,7 +195,7 @@ export default function OurWorkPage() {
         badge="OUR WORK"
         title="Projects That Define Excellence"
         titleHighlight="Define Excellence"
-        subtitle="100+ world-class digital products delivered across industries â€” from e-commerce websites and mobile apps to enterprise dashboards, CRM, ERP and SaaS platforms."
+        subtitle="100+ world-class digital products delivered across industries — from e-commerce websites and mobile apps to enterprise dashboards, CRM, ERP and SaaS platforms."
         breadcrumb="Our Work"
       />
 
@@ -187,28 +220,53 @@ export default function OurWorkPage() {
         </div>
       </section>
 
-      {/* Sticky quick-jump nav */}
-      <nav className="pw__nav">
-        <div className="container">
-          <div className="pw__nav-links">
-            {PORTFOLIO_SECTIONS.map(s => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                className={`pw__nav-link ${activeNav === s.id ? 'pw__nav-link--active' : ''}`}
-                style={{ '--pw-nav-accent': s.accent }}
-              >
-                <span className="pw__nav-num">{s.badge}</span>
-                {s.label}
-              </a>
-            ))}
+      {/* Sticky quick-jump nav — only after data loads */}
+      {sections.length > 0 && (
+        <nav className="pw__nav">
+          <div className="container">
+            <div className="pw__nav-links">
+              {sections.map(({ cat }) => {
+                const meta = CAT_META[cat] || {};
+                return (
+                  <a
+                    key={cat}
+                    href={`#${cat}`}
+                    className={`pw__nav-link ${activeNav === cat ? 'pw__nav-link--active' : ''}`}
+                    style={{ '--pw-nav-accent': meta.accent }}
+                  >
+                    <span className="pw__nav-num">{meta.badge}</span>
+                    {meta.label}
+                  </a>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      )}
 
-      {/* Portfolio sections */}
-      {PORTFOLIO_SECTIONS.map(section => (
-        <PortfolioSection key={section.id} section={section} />
+      {/* Skeletons while loading */}
+      {loading && (
+        <section className="pw__section">
+          <div className="container">
+            <div className="pw__grid">
+              {[...Array(6)].map((_, i) => <SkeletonCard key={i} />)}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Empty state */}
+      {!loading && sections.length === 0 && (
+        <section className="pw__section">
+          <div className="container" style={{ textAlign: 'center', padding: '80px 0', color: 'var(--text-muted)' }}>
+            <p style={{ fontSize: '1.1rem' }}>No projects yet. Check back soon!</p>
+          </div>
+        </section>
+      )}
+
+      {/* Portfolio sections from API */}
+      {sections.map(({ cat, projects }) => (
+        <PortfolioSection key={cat} cat={cat} projects={projects} />
       ))}
 
       {/* CTA */}

@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
@@ -6,7 +6,7 @@ import { STATS } from '../../constants/index';
 import heroImg from '../../assets/hero.png';
 import './Hero.css';
 
-// â”€â”€ Typing effect â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Typing effect ─────────────────────────────────────────────────────────────
 const TYPING_WORDS = [
   'Custom Software',
   'AI Solutions',
@@ -53,7 +53,7 @@ function useTypingEffect(words, { typeSpeed = 80, deleteSpeed = 45, pauseMs = 18
   return displayed;
 }
 
-// â”€â”€ Animated count-up stat â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Animated count-up stat ────────────────────────────────────────────────────
 function StatCard({ value, label, delay = 0 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-60px' });
@@ -99,7 +99,7 @@ function StatCard({ value, label, delay = 0 }) {
   );
 }
 
-// â”€â”€ Headline word animation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Headline word animation ───────────────────────────────────────────────────
 const HEADLINE_LINES = [
   { text: 'We Build', gradient: false },
   { text: 'Digital Experiences', gradient: true },
@@ -121,7 +121,7 @@ const lineVariants = {
   },
 };
 
-// â”€â”€ Main component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Main component ─────────────────────────────────────────────────────────────
 export default function Hero() {
   const typedWord = useTypingEffect(TYPING_WORDS);
 
@@ -222,7 +222,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right column â€” hero image */}
+        {/* Right column — hero image */}
         <motion.div
           className="hero__image-wrap"
           initial={{ opacity: 0, x: 40 }}

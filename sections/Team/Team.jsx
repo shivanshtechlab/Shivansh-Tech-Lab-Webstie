@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
@@ -58,7 +58,7 @@ function TeamCard({ member, delay }) {
               <span key={s} className="team-card__skill">{s}</span>
             ))}
           </div>
-          <div className="team-card__flip-hint">Hover to connect â†’</div>
+          <div className="team-card__flip-hint">Hover to connect →</div>
         </div>
 
         {/* Back Face */}

@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useRef, useState } from 'react';
 import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
@@ -41,12 +41,12 @@ export default function Technologies() {
           <SectionTitle
             badge="OUR TECH STACK"
             title={<>Powered by <span>Cutting-Edge</span> Technologies</>}
-            subtitle="We stay at the bleeding edge â€” picking the best tools for every challenge to deliver fast, scalable, future-proof solutions."
+            subtitle="We stay at the bleeding edge — picking the best tools for every challenge to deliver fast, scalable, future-proof solutions."
           />
         </ScrollReveal>
       </div>
 
-      {/* Row 1 â€” left scroll */}
+      {/* Row 1 — left scroll */}
       <div
         className="tech__marquee-wrapper"
         onMouseEnter={() => setPaused1(true)}
@@ -61,7 +61,7 @@ export default function Technologies() {
         </div>
       </div>
 
-      {/* Row 2 â€” right scroll */}
+      {/* Row 2 — right scroll */}
       <div
         className="tech__marquee-wrapper"
         style={{ marginTop: '1.25rem' }}

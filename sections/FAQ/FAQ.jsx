@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -103,7 +103,7 @@ export default function FAQ() {
 
         <ScrollReveal delay={0.2}>
           <div className="faq-cta">
-            <div className="faq-cta__icon">ðŸ’¬</div>
+            <div className="faq-cta__icon">💬</div>
             <div className="faq-cta__text">
               <span className="faq-cta__title">Still have questions?</span>
               <span className="faq-cta__sub">Our team responds within 2 hours on business days.</span>

@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
@@ -9,23 +9,23 @@ import './ContactPage.css';
 
 const contactInfo = [
   {
-    icon: 'âœ‰ï¸',
+    icon: '✉️',
     title: 'Email Us',
-    primary: 'hello@Shivansh Tech Lab.com',
+    primary: 'hello@ShivanshTechLab.com',
     secondary: 'We reply within 2 hours',
     color: '#6C63FF',
-    href: 'mailto:hello@Shivansh Tech Lab.com',
+    href: 'mailto:hello@ShivanshTechLab.com',
   },
   {
-    icon: 'ðŸ“ž',
+    icon: '📞',
     title: 'Call Us',
     primary: '+1 (800) RED-BUGFIX',
-    secondary: 'Monâ€“Fri, 9amâ€“6pm EST',
+    secondary: 'Mon–Fri, 9am–6pm EST',
     color: '#00D9FF',
     href: 'tel:+18007332849',
   },
   {
-    icon: 'ðŸ“',
+    icon: '📍',
     title: 'Visit Us',
     primary: '100 Innovation Drive',
     secondary: 'Tech Valley, CA 94105',
@@ -33,7 +33,7 @@ const contactInfo = [
     href: '#',
   },
   {
-    icon: 'ðŸ•',
+    icon: '🕒',
     title: 'Working Hours',
     primary: '24/7 Support Available',
     secondary: 'Project teams across time zones',
@@ -43,10 +43,10 @@ const contactInfo = [
 ];
 
 const offices = [
-  { city: 'New York', label: 'HQ', flag: 'ðŸ‡ºðŸ‡¸', address: '100 Innovation Drive, Tech Valley, CA 94105', color: '#6C63FF' },
-  { city: 'London', label: 'EU', flag: 'ðŸ‡¬ðŸ‡§', address: '25 Canary Wharf, London E14 5AB', color: '#00D9FF' },
-  { city: 'Dubai', label: 'MENA', flag: 'ðŸ‡¦ðŸ‡ª', address: 'DIFC, Gate Village, Dubai 506627', color: '#7C3AED' },
-  { city: 'Singapore', label: 'APAC', flag: 'ðŸ‡¸ðŸ‡¬', address: '1 Raffles Place, Tower 1, #20-01', color: '#00E676' },
+  { city: 'New York',   label: 'HQ',   flag: '🇺🇸', address: '100 Innovation Drive, Tech Valley, CA 94105', color: '#6C63FF' },
+  { city: 'London',     label: 'EU',   flag: '🇬🇧', address: '25 Canary Wharf, London E14 5AB',             color: '#00D9FF' },
+  { city: 'Dubai',      label: 'MENA', flag: '🇦🇪', address: 'DIFC, Gate Village, Dubai 506627',            color: '#7C3AED' },
+  { city: 'Singapore',  label: 'APAC', flag: '🇸🇬', address: '1 Raffles Place, Tower 1, #20-01',            color: '#00E676' },
 ];
 
 const serviceOptions = [
@@ -65,9 +65,9 @@ const serviceOptions = [
 
 const budgetOptions = [
   'Under $10,000',
-  '$10,000 â€“ $25,000',
-  '$25,000 â€“ $50,000',
-  '$50,000 â€“ $100,000',
+  '$10,000 – $25,000',
+  '$25,000 – $50,000',
+  '$50,000 – $100,000',
   '$100,000+',
   'Not sure yet',
 ];
@@ -80,13 +80,14 @@ export default function ContactPage() {
   const [status, setStatus] = useState('idle');
 
   useEffect(() => {
-    document.title = 'Contact â€“ Shivansh Tech Lab';
+    document.title = 'Contact – Shivansh Tech Lab';
   }, []);
 
   const validate = useCallback(() => {
     const e = {};
     if (!form.name.trim()) e.name = 'Name is required';
-    if (!form.email || !form.email.includes('@')) e.email = 'Valid email required';
+    if (!form.phone.trim()) e.phone = 'Phone number is required';
+    if (form.email.trim() && !form.email.includes('@')) e.email = 'Please enter a valid email address';
     if (!form.service) e.service = 'Please select a service';
     if (!form.message.trim() || form.message.length < 20) e.message = 'Message must be at least 20 characters';
     return e;
@@ -98,7 +99,7 @@ export default function ContactPage() {
     setErrors((prev) => ({ ...prev, [name]: '' }));
   }, []);
 
-  const handleSubmit = useCallback((e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
@@ -106,10 +107,22 @@ export default function ContactPage() {
       return;
     }
     setStatus('loading');
-    setTimeout(() => {
-      setStatus('success');
-      setForm({ name: '', email: '', phone: '', service: '', budget: '', message: '' });
-    }, 1500);
+    try {
+      const res = await fetch('http://localhost:5000/api/enquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus('success');
+        setForm({ name: '', email: '', phone: '', service: '', budget: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   }, [form, validate]);
 
   return (
@@ -173,7 +186,7 @@ export default function ContactPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <span className="cp__success-icon">âœ…</span>
+                  <span className="cp__success-icon">✅</span>
                   <h3>Message Sent!</h3>
                   <p>Thanks for reaching out! Our team will contact you within 2 business hours.</p>
                   <button className="cp__success-reset" onClick={() => setStatus('idle')}>Send Another</button>
@@ -195,13 +208,13 @@ export default function ContactPage() {
                       {errors.name && <span className="cp__error">{errors.name}</span>}
                     </div>
                     <div className={`cp__field ${errors.email ? 'cp__field--error' : ''}`}>
-                      <label className="cp__label" htmlFor="email">Email Address *</label>
+                      <label className="cp__label" htmlFor="email">Email Address</label>
                       <input
                         id="email"
                         name="email"
                         type="email"
                         className="cp__input"
-                        placeholder="john@company.com"
+                        placeholder="john@company.com (optional)"
                         value={form.email}
                         onChange={handleChange}
                       />
@@ -210,8 +223,8 @@ export default function ContactPage() {
                   </div>
 
                   <div className="cp__form-row">
-                    <div className="cp__field">
-                      <label className="cp__label" htmlFor="phone">Phone Number</label>
+                    <div className={`cp__field ${errors.phone ? 'cp__field--error' : ''}`}>
+                      <label className="cp__label" htmlFor="phone">Phone Number *</label>
                       <input
                         id="phone"
                         name="phone"
@@ -221,6 +234,7 @@ export default function ContactPage() {
                         value={form.phone}
                         onChange={handleChange}
                       />
+                      {errors.phone && <span className="cp__error">{errors.phone}</span>}
                     </div>
                     <div className={`cp__field ${errors.service ? 'cp__field--error' : ''}`}>
                       <label className="cp__label" htmlFor="service">Service Needed *</label>
@@ -231,7 +245,7 @@ export default function ContactPage() {
                         value={form.service}
                         onChange={handleChange}
                       >
-                        <option value="">Select a serviceâ€¦</option>
+                        <option value="">Select a service…</option>
                         {serviceOptions.map((s) => (
                           <option key={s} value={s}>{s}</option>
                         ))}
@@ -249,7 +263,7 @@ export default function ContactPage() {
                       value={form.budget}
                       onChange={handleChange}
                     >
-                      <option value="">Select budget rangeâ€¦</option>
+                      <option value="">Select budget range…</option>
                       {budgetOptions.map((b) => (
                         <option key={b} value={b}>{b}</option>
                       ))}
@@ -262,7 +276,7 @@ export default function ContactPage() {
                       id="message"
                       name="message"
                       className="cp__textarea"
-                      placeholder="Tell us about your project, goals, and timelineâ€¦"
+                      placeholder="Tell us about your project, goals, and timeline…"
                       rows={5}
                       value={form.message}
                       onChange={handleChange}
@@ -278,7 +292,7 @@ export default function ContactPage() {
                     {status === 'loading' ? (
                       <>
                         <span className="cp__btn-spinner" aria-hidden="true" />
-                        Sendingâ€¦
+                        Sending…
                       </>
                     ) : (
                       <>

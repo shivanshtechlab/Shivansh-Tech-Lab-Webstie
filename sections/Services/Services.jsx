@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -112,7 +112,7 @@ export default function Services() {
           <SectionTitle
             badge="WHAT WE DO"
             title={<>Complete Digital Solutions<br /><span>Under One Roof</span></>}
-            subtitle="From concept to launch and beyond â€” we deliver every layer of your digital ecosystem with mastery and precision."
+            subtitle="From concept to launch and beyond — we deliver every layer of your digital ecosystem with mastery and precision."
           />
         </ScrollReveal>
 
@@ -153,9 +153,9 @@ export default function Services() {
               onClick={() => setShowAll(!showAll)}
             >
               {showAll ? (
-                <>Show Featured Only <span>â†‘</span></>
+                <>Show Featured Only <span>↑</span></>
               ) : (
-                <>Explore All 16 Services <span>â†“</span></>
+                <>Explore All 16 Services <span>↓</span></>
               )}
             </button>
           </div>

@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
@@ -49,7 +49,7 @@ export default function DashboardPreview() {
           <SectionTitle
             badge="ADMIN DASHBOARDS"
             title="Beautiful, Data-Rich Admin Panels"
-            subtitle="Custom-built dashboards that turn complex data into clear, actionable insights â€” beautifully designed for every role."
+            subtitle="Custom-built dashboards that turn complex data into clear, actionable insights — beautifully designed for every role."
           />
         </ScrollReveal>
 
@@ -135,7 +135,7 @@ export default function DashboardPreview() {
                 {/* Header */}
                 <div className="db-header">
                   <div className="db-header__title">
-                    <div className="db-header__greeting">Good morning, John ðŸ‘‹</div>
+                    <div className="db-header__greeting">Good morning, John 👋</div>
                     <div className="db-header__subtitle">Here's what's happening today</div>
                   </div>
                   <div className="db-header__actions">

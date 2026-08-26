@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useRef, useCallback } from 'react';
 import { motion, useInView } from 'framer-motion';
@@ -8,42 +8,42 @@ import './WhyChooseUs.css';
 
 const features = [
   {
-    icon: 'ðŸš€',
+    icon: '🚀',
     title: 'Lightning Fast Delivery',
     description: 'We execute with precision and speed. Our agile methodology ensures your product reaches market 40% faster than industry average.',
     stat: '40% faster',
     color: '#6C63FF',
   },
   {
-    icon: 'ðŸ’Ž',
+    icon: '💎',
     title: 'Premium Quality Code',
     description: 'Every line of code is reviewed, tested, and optimized. We follow best practices and deliver solutions built to last a decade.',
     stat: '99.9% uptime',
     color: '#00D9FF',
   },
   {
-    icon: 'ðŸ”’',
+    icon: '🔒',
     title: 'Enterprise Security',
     description: 'Bank-grade security built into every layer. GDPR compliant, ISO-certified processes, and penetration-tested applications.',
     stat: 'ISO 27001',
     color: '#7C3AED',
   },
   {
-    icon: 'ðŸ¤',
+    icon: '🤝',
     title: 'Dedicated Support',
     description: 'Your success is our mission. A dedicated project manager and support team available around the clock, every day of the year.',
     stat: '24/7 support',
     color: '#00E676',
   },
   {
-    icon: 'ðŸ“ˆ',
+    icon: '📈',
     title: 'Proven ROI',
     description: 'Our clients see an average 3x return on investment within 18 months. Data-driven decisions that directly impact your bottom line.',
     stat: '3x avg ROI',
     color: '#6C63FF',
   },
   {
-    icon: 'ðŸŒ',
+    icon: '🌍',
     title: 'Global Experience',
     description: 'Having served 50+ clients across 30 countries, we understand global markets and deliver culturally intelligent digital solutions.',
     stat: '30+ countries',

@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -33,7 +33,7 @@ function PricingCard({ plan, billing, delay }) {
 
         {plan.popular && (
           <div className="pricing-card__badge">
-            <span>â­ Most Popular</span>
+            <span>⭐ Most Popular</span>
           </div>
         )}
 
@@ -152,7 +152,7 @@ export default function Pricing() {
         <ScrollReveal delay={0.2}>
           <p className="pricing-note">
             All prices are estimates. Final pricing depends on project scope.
-            <a href="#contact" className="pricing-note__link">Talk to us for a custom quote â†’</a>
+            <a href="#contact" className="pricing-note__link">Talk to us for a custom quote →</a>
           </p>
         </ScrollReveal>
       </div>

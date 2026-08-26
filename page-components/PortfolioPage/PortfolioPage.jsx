@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -36,7 +36,7 @@ function ProjectCard({ item, index }) {
         </div>
         <div className="pp__mockup-screen">
           <div className="pp__mockup-bg" style={{ background: `linear-gradient(135deg, ${item.color}22, ${item.color}08)` }}>
-            <div className="pp__mockup-icon">{item.category === 'AI Solution' ? 'ðŸ¤–' : item.category === 'Mobile App' ? 'ðŸ“±' : 'ðŸ’»'}</div>
+            <div className="pp__mockup-icon">{item.category === 'AI Solution' ? '🤖' : item.category === 'Mobile App' ? '📱' : '💻'}</div>
             <div className="pp__mockup-lines">
               <div className="pp__mockup-line" style={{ width: '70%' }} />
               <div className="pp__mockup-line" style={{ width: '50%' }} />
@@ -92,7 +92,7 @@ function TestimonialCard({ t }) {
     >
       <div className="pp__testimonial-stars" aria-label={`${t.rating} stars`}>
         {Array.from({ length: t.rating }).map((_, i) => (
-          <span key={i} className="pp__star">â˜…</span>
+          <span key={i} className="pp__star">★</span>
         ))}
       </div>
       <p className="pp__testimonial-content">"{t.content}"</p>
@@ -114,7 +114,7 @@ export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('All');
 
   useEffect(() => {
-    document.title = 'Portfolio â€“ Shivansh Tech Lab';
+    document.title = 'Portfolio – Shivansh Tech Lab';
   }, []);
 
   const filtered = activeCategory === 'All'

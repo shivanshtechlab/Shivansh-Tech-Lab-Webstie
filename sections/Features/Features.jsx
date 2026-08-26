@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -12,7 +12,7 @@ const features = [
     label: 'AI-Powered Analytics',
     headline: 'Turn Data Into Decisions With AI',
     description:
-      'Our intelligent analytics engine processes millions of data points in real-time, surfacing the insights that matter most. Predictive modeling, anomaly detection, and automated reportingâ€”all in one platform.',
+      'Our intelligent analytics engine processes millions of data points in real-time, surfacing the insights that matter most. Predictive modeling, anomaly detection, and automated reporting—all in one platform.',
     bullets: ['Real-time dashboards & KPIs', 'Predictive trend forecasting', 'Automated anomaly alerts', 'One-click PDF/CSV exports'],
     visual: 'analytics',
     layout: 'text-left',
@@ -97,10 +97,10 @@ function AnalyticsVisual() {
         </div>
       </div>
       <div className="fv-analytics__floating fv-analytics__floating--1">
-        <span>ðŸ”¥</span> Trending up 23%
+        <span>🔥</span> Trending up 23%
       </div>
       <div className="fv-analytics__floating fv-analytics__floating--2">
-        <span>âš¡</span> 1.2M events/sec
+        <span>⚡</span> 1.2M events/sec
       </div>
     </div>
   );
@@ -272,7 +272,7 @@ function FeatureRow({ feature, index }) {
           <ul className="feature-row__bullets">
             {feature.bullets.map((b, i) => (
               <li key={i} className="feature-row__bullet">
-                <span className="feature-row__bullet-icon" style={{ color: feature.color }}>âœ“</span>
+                <span className="feature-row__bullet-icon" style={{ color: feature.color }}>✓</span>
                 {b}
               </li>
             ))}
@@ -306,7 +306,7 @@ export default function Features() {
           <SectionTitle
             badge="FEATURES"
             title="Everything You Need to Succeed"
-            subtitle="A complete platform engineered for performance, security, and scale â€” so you can focus on building great products."
+            subtitle="A complete platform engineered for performance, security, and scale — so you can focus on building great products."
           />
         </ScrollReveal>
         <div className="features-list">

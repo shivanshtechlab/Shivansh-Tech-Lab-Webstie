@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useRef, useCallback } from 'react';
 import './MagneticButton.css';
@@ -7,7 +7,7 @@ import './MagneticButton.css';
  * MagneticButton
  * Wraps any children and applies a magnetic pull toward the cursor.
  *
- * @param {number} strength  - how strongly it pulls (0â€“1, default 0.4)
+ * @param {number} strength  - how strongly it pulls (0–1, default 0.4)
  * @param {number} radius    - activation radius multiplier vs element size (default 1.5)
  */
 export default function MagneticButton({

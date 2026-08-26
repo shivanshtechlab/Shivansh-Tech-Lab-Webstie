@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useRef, useCallback } from 'react';
 import { useApp } from '../../context/AppContext';
@@ -36,7 +36,7 @@ export default function Button({
   const magnetOffset = useRef({ x: 0, y: 0 });
   const rafId = useRef(null);
 
-  // â”€â”€ Ripple effect â”€â”€
+  // ── Ripple effect ──
   const createRipple = useCallback((e) => {
     const btn = btnRef.current;
     if (!btn) return;
@@ -57,7 +57,7 @@ export default function Button({
     ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
   }, []);
 
-  // â”€â”€ Magnetic effect â”€â”€
+  // ── Magnetic effect ──
   const handleMouseMove = useCallback((e) => {
     const btn = btnRef.current;
     if (!btn) return;

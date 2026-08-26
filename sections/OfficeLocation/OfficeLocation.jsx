@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -11,7 +11,7 @@ const offices = [
     id: 1,
     city: 'New York',
     country: 'United States',
-    flag: 'ðŸ‡ºðŸ‡¸',
+    flag: '🇺🇸',
     label: 'HQ',
     address: '350 5th Avenue, Suite 4200, New York, NY 10118',
     phone: '+1 (555) 987-6543',
@@ -25,7 +25,7 @@ const offices = [
     id: 2,
     city: 'London',
     country: 'United Kingdom',
-    flag: 'ðŸ‡¬ðŸ‡§',
+    flag: '🇬🇧',
     label: 'EU',
     address: '1 Canada Square, Canary Wharf, London E14 5AB',
     phone: '+44 20 7946 0000',
@@ -38,7 +38,7 @@ const offices = [
     id: 3,
     city: 'Dubai',
     country: 'United Arab Emirates',
-    flag: 'ðŸ‡¦ðŸ‡ª',
+    flag: '🇦🇪',
     label: 'MENA',
     address: 'Dubai Internet City, Building 3, Level 5, Dubai',
     phone: '+971 4 123 4567',
@@ -51,7 +51,7 @@ const offices = [
     id: 4,
     city: 'Singapore',
     country: 'Singapore',
-    flag: 'ðŸ‡¸ðŸ‡¬',
+    flag: '🇸🇬',
     label: 'APAC',
     address: '1 Raffles Place, #20-61, Singapore 048616',
     phone: '+65 6789 0123',
@@ -239,15 +239,15 @@ export default function OfficeLocation() {
                       transition={{ duration: 0.3 }}
                     >
                       <div className="office-card__detail">
-                        <span className="office-card__detail-icon">ðŸ“</span>
+                        <span className="office-card__detail-icon">📍</span>
                         <span>{office.address}</span>
                       </div>
                       <div className="office-card__detail">
-                        <span className="office-card__detail-icon">ðŸ“ž</span>
+                        <span className="office-card__detail-icon">📞</span>
                         <a href={`tel:${office.phone}`} className="office-card__detail-link">{office.phone}</a>
                       </div>
                       <div className="office-card__detail">
-                        <span className="office-card__detail-icon">âœ‰</span>
+                        <span className="office-card__detail-icon">✉</span>
                         <a href={`mailto:${office.email}`} className="office-card__detail-link">{office.email}</a>
                       </div>
                     </motion.div>

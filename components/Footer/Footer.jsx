@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
@@ -17,7 +17,7 @@ import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { validateEmail } from '../../utils/helpers';
 import './Footer.css';
 
-/* â”€â”€â”€ SVG Social Icons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── SVG Social Icons ──────────────────────────────────────────────────────── */
 const SocialSVG = ({ icon }) => {
   const map = {
     linkedin: (
@@ -50,7 +50,7 @@ const SocialSVG = ({ icon }) => {
   return <span className="footer-social-svg">{map[icon] || null}</span>;
 };
 
-/* â”€â”€â”€ Animated Particles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Animated Particles ────────────────────────────────────────────────────── */
 const PARTICLE_COUNT = 30;
 
 const Particles = () => {
@@ -114,7 +114,7 @@ const Particles = () => {
   return <canvas ref={canvasRef} className="footer-particles-canvas" aria-hidden="true" />;
 };
 
-/* â”€â”€â”€ Column animation variants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Column animation variants ────────────────────────────────────────────── */
 const colVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i) => ({
@@ -124,7 +124,7 @@ const colVariants = {
   }),
 };
 
-/* â”€â”€â”€ Services List â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Services List ─────────────────────────────────────────────────────────── */
 const SERVICES_LINKS = NAV_LINKS.find((l) => l.megaMenu)?.children ?? [];
 
 const COMPANY_NAV = [
@@ -135,7 +135,7 @@ const COMPANY_NAV = [
   { label: 'Contact', href: '/contact' },
 ];
 
-/* â”€â”€â”€ Newsletter Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Newsletter Form ───────────────────────────────────────────────────────── */
 const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
@@ -159,7 +159,7 @@ const Newsletter = () => {
   return (
     <div className="footer-newsletter">
       <p className="footer-newsletter-desc">
-        Stay ahead with insights on tech, design, and digital innovation â€” delivered monthly.
+        Stay ahead with insights on tech, design, and digital innovation — delivered monthly.
       </p>
       <form className="footer-newsletter-form" onSubmit={handleSubmit} noValidate>
         <div className={`footer-newsletter-field ${status === 'error' ? 'has-error' : ''} ${status === 'success' ? 'has-success' : ''}`}>
@@ -209,7 +209,7 @@ const Newsletter = () => {
   );
 };
 
-/* â”€â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Footer ────────────────────────────────────────────────────────────────── */
 export default function Footer() {
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
   const { ref: wordRef, isVisible: wordVisible } = useScrollAnimation({ threshold: 0.1 });
@@ -248,7 +248,7 @@ export default function Footer() {
         <div className="footer-container">
           <div className="footer-grid" ref={gridRef}>
 
-            {/* Col 1 â€” Brand */}
+            {/* Col 1 — Brand */}
             <motion.div
               className="footer-col footer-col--brand"
               custom={0}
@@ -262,7 +262,7 @@ export default function Footer() {
               </Link>
 
               <p className="footer-brand-desc">
-                We craft premium digital experiences â€” from custom websites to enterprise platforms â€”
+                We craft premium digital experiences — from custom websites to enterprise platforms —
                 that help ambitious brands scale and lead in their industries.
               </p>
 
@@ -305,7 +305,7 @@ export default function Footer() {
               </div>
             </motion.div>
 
-            {/* Col 2 â€” Services */}
+            {/* Col 2 — Services */}
             <motion.div
               className="footer-col"
               custom={1}
@@ -330,7 +330,7 @@ export default function Footer() {
               </ul>
             </motion.div>
 
-            {/* Col 3 â€” Company */}
+            {/* Col 3 — Company */}
             <motion.div
               className="footer-col"
               custom={2}
@@ -365,7 +365,7 @@ export default function Footer() {
               </div>
             </motion.div>
 
-            {/* Col 4 â€” Newsletter */}
+            {/* Col 4 — Newsletter */}
             <motion.div
               className="footer-col footer-col--newsletter"
               custom={3}
@@ -389,9 +389,9 @@ export default function Footer() {
             </p>
             <nav className="footer-legal-links" aria-label="Legal navigation">
               <a href="/privacy" className="footer-legal-link">Privacy Policy</a>
-              <span className="footer-legal-sep" aria-hidden="true">Â·</span>
+              <span className="footer-legal-sep" aria-hidden="true">·</span>
               <a href="/terms" className="footer-legal-link">Terms of Service</a>
-              <span className="footer-legal-sep" aria-hidden="true">Â·</span>
+              <span className="footer-legal-sep" aria-hidden="true">·</span>
               <a href="/sitemap.xml" className="footer-legal-link">Sitemap</a>
             </nav>
           </div>
