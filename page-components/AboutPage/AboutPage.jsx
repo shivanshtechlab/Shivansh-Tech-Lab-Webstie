@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero/PageHero';
 import Footer from '../../components/Footer/Footer';
+import FounderSection from '../../components/FounderSection/FounderSection';
 import { team } from '../../data/team';
 import './AboutPage.css';
 
@@ -87,6 +88,8 @@ export default function AboutPage() {
         subtitle="A team of passionate builders, designers, and strategists on a mission to create digital experiences that define tomorrow."
         breadcrumb="About"
       />
+
+      <FounderSection />
 
       {/* Story Section */}
       <section className="ap__story">

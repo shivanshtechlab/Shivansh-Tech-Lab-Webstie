@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { pageTransition } from '../animations/variants';
 import Hero from '../sections/Hero/Hero';
+import FounderSection from '../components/FounderSection/FounderSection';
 import Process from '../sections/Process/Process';
 import Technologies from '../sections/Technologies/Technologies';
 import ERPModules from '../sections/ERPModules/ERPModules';
@@ -23,6 +24,7 @@ export default function Home() {
       exit={pageTransition.exit}
     >
       <Hero />
+      <FounderSection />
       <WebsiteShowcase />
       <DashboardPreview />
       <MobileApp />
