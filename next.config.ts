@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: false,
   poweredByHeader: false,
   turbopack: {},
+  serverExternalPackages: ['sequelize', 'mysql2'],
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
