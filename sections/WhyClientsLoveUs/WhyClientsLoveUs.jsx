@@ -5,6 +5,7 @@ import { useInView } from 'framer-motion';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
 import { testimonials } from '../../data/testimonials';
+import { seededRandom, round } from '../../utils/helpers';
 import './WhyClientsLoveUs.css';
 
 const stats = [
@@ -58,6 +59,15 @@ function StarRow({ count = 5, color = '#FFB800' }) {
 
 const quotes = testimonials.slice(0, 3);
 
+// Seeded so SSR and client hydration render identical stars.
+const rand = seededRandom(30);
+const STAR_PARTICLES = Array.from({ length: 30 }, () => ({
+  left: `${round(rand() * 100)}%`,
+  top: `${round(rand() * 100)}%`,
+  '--delay': `${round(rand() * 4)}s`,
+  '--size': `${round(1 + rand() * 2)}px`,
+}));
+
 export default function WhyClientsLoveUs() {
   const statsRef = useRef(null);
   const statsInView = useInView(statsRef, { once: true, margin: '-80px' });
@@ -70,17 +80,8 @@ export default function WhyClientsLoveUs() {
         <div className="wclu-aurora__layer wclu-aurora__layer--3" />
       </div>
       <div className="wclu-stars-bg">
-        {Array.from({ length: 30 }).map((_, i) => (
-          <div
-            key={i}
-            className="wclu-star-particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              '--delay': `${Math.random() * 4}s`,
-              '--size': `${1 + Math.random() * 2}px`,
-            }}
-          />
+        {STAR_PARTICLES.map((style, i) => (
+          <div key={i} className="wclu-star-particle" style={style} />
         ))}
       </div>
 

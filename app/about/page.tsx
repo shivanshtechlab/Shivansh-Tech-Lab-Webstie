@@ -5,11 +5,11 @@ const SITE_URL = 'https://shivanshtechlabs.com';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'We are Shivansh Tech Lab, founded by Mukesh Tieary — a team of passionate builders, designers, and strategists on a mission to create digital experiences that define tomorrow.',
+  description: 'We are Shivansh Tech Lab, founded by Mukesh Tiwary — a team of passionate builders, designers, and strategists on a mission to create digital experiences that define tomorrow.',
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Shivansh Tech Lab',
-    description: 'We are Shivansh Tech Lab, founded by Mukesh Tieary — a team of passionate builders, designers, and strategists on a mission to create digital experiences that define tomorrow.',
+    description: 'We are Shivansh Tech Lab, founded by Mukesh Tiwary — a team of passionate builders, designers, and strategists on a mission to create digital experiences that define tomorrow.',
     url: '/about',
   },
 };
@@ -18,7 +18,7 @@ const founderJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   '@id': `${SITE_URL}/about#founder`,
-  name: 'Mukesh Tieary',
+  name: 'Mukesh Tiwary',
   jobTitle: 'Founder',
   description: 'Founder of Shivansh Tech Lab. Full-stack and mobile app developer (Android & iOS) with hands-on DevOps expertise.',
   image: `${SITE_URL}/founder.jpg`,

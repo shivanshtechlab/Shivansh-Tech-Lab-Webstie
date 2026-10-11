@@ -2,6 +2,7 @@ export const erpModules = [
   {
     id: 1,
     icon: '📦',
+    iconName: 'box',
     title: 'Inventory Management',
     description: 'Real-time stock tracking, multi-warehouse support, and automated reorder points.',
     color: '#6C63FF',
@@ -9,6 +10,7 @@ export const erpModules = [
   {
     id: 2,
     icon: '💰',
+    iconName: 'wallet',
     title: 'Finance & Accounting',
     description: 'General ledger, accounts payable/receivable, financial reporting, and tax management.',
     color: '#00D9FF',
@@ -16,6 +18,7 @@ export const erpModules = [
   {
     id: 3,
     icon: '👥',
+    iconName: 'users',
     title: 'HR Management',
     description: 'Employee records, payroll, attendance, leave management, and performance reviews.',
     color: '#7C3AED',
@@ -23,6 +26,7 @@ export const erpModules = [
   {
     id: 4,
     icon: '🛒',
+    iconName: 'cart',
     title: 'Purchase Management',
     description: 'Purchase orders, vendor management, approval workflows, and spend analytics.',
     color: '#00E676',
@@ -30,6 +34,7 @@ export const erpModules = [
   {
     id: 5,
     icon: '📊',
+    iconName: 'trending',
     title: 'Sales Management',
     description: 'Quotations, orders, invoicing, customer management, and sales analytics.',
     color: '#6C63FF',
@@ -37,6 +42,7 @@ export const erpModules = [
   {
     id: 6,
     icon: '🏭',
+    iconName: 'factory',
     title: 'Manufacturing',
     description: 'Production planning, BOM management, work orders, and quality control.',
     color: '#00D9FF',
@@ -44,6 +50,7 @@ export const erpModules = [
   {
     id: 7,
     icon: '🚚',
+    iconName: 'truck',
     title: 'Supply Chain',
     description: 'Vendor management, logistics tracking, and end-to-end supply chain visibility.',
     color: '#7C3AED',
@@ -51,6 +58,7 @@ export const erpModules = [
   {
     id: 8,
     icon: '📈',
+    iconName: 'pie',
     title: 'Business Intelligence',
     description: 'Real-time dashboards, custom reports, KPI tracking, and predictive analytics.',
     color: '#00E676',
